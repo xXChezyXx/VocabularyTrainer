@@ -1,4 +1,108 @@
 package vocab;
 
+import utils.Difficulty;
+import utils.DynArray;
+
+import java.util.Random;
+
 public class VocabPackage {
+
+    private DynArray vocablist;
+    private int richtig;
+    private int falsch;
+
+    public VocabPackage(DynArray vocablist){
+        this.vocablist = vocablist;
+    }
+
+    public DynArray getVocablist() {
+        return vocablist;
+    }
+
+    public DynArray getRightVocabList() {
+        DynArray dynArray = new DynArray();
+        for (int i = 0;i < vocablist.getLength();i++){
+            if(((Vocabulary) vocablist.getItem(i)).getDifficulty() == Difficulty.RICHTIG){
+                dynArray.append(vocablist.getItem(i));
+            }
+        }
+        return dynArray;
+    }
+    public DynArray getWrongVocabList() {
+        DynArray dynArray = new DynArray();
+        for (int i = 0;i < vocablist.getLength();i++){
+            if(((Vocabulary) vocablist.getItem(i)).getDifficulty() == Difficulty.FALSCH){
+                dynArray.append(vocablist.getItem(i));
+            }
+        }
+        return dynArray;
+    }
+    public DynArray getHardVocabList() {
+        DynArray dynArray = new DynArray();
+        for (int i = 0;i < vocablist.getLength();i++){
+            if(((Vocabulary) vocablist.getItem(i)).getDifficulty() == Difficulty.HARD){
+                dynArray.append(vocablist.getItem(i));
+            }
+        }
+        return dynArray;
+    }
+    public DynArray getUndefinedVocabList() {
+        DynArray dynArray = new DynArray();
+        for (int i = 0;i < vocablist.getLength();i++){
+            if(((Vocabulary) vocablist.getItem(i)).getDifficulty() == Difficulty.UNDEFINED){
+                dynArray.append(vocablist.getItem(i));
+            }
+        }
+        return dynArray;
+    }
+
+    /*
+    Aufteilung für die Vokabeln:        Wenn RICHTIG leer ist:          Wenn FALSCH leer ist:           Wenn HARD leer ist:
+    RICHTIG=5%                          FALSCH=70%                      RICHTIG=20%                     RICHTIG=10%
+    FALSCH=70%                          HARD=30%                        HARD=80%                        FALSCH=90%
+    HARD=25%
+                                           ------ Dabei hat Undefined Vorrang ------
+    */
+    public Vocabulary getRandomVocab(){
+        if(!getUndefinedVocabList().isEmpty()){
+            int randomvocab = new Random().nextInt(getUndefinedVocabList().getLength());
+            return (Vocabulary) getUndefinedVocabList().getItem(randomvocab);
+        }
+        setProbability();
+        int chance = new Random().nextInt(100)+1;
+        if(chance <= richtig){ //Wenn richtig gewählt wurde
+            int randomright = new Random().nextInt(getRightVocabList().getLength());
+            return (Vocabulary) getUndefinedVocabList().getItem(randomright);
+        }else if(chance <= richtig+falsch){ //Wenn falsch gewählt wurde
+            int randomwrong = new Random().nextInt(getWrongVocabList().getLength());
+            return (Vocabulary) getUndefinedVocabList().getItem(randomwrong);
+        }
+        int randomhard = new Random().nextInt(getHardVocabList().getLength()); //Wenn hard gewählt wurde
+        return (Vocabulary) getUndefinedVocabList().getItem(randomhard);
+    }
+
+    private void setProbability(){
+        richtig = 0;
+        falsch = 0;
+        if(getRightVocabList().isEmpty()){
+            falsch = 70;
+        }else if(getRightVocabList().isEmpty() && getHardVocabList().isEmpty()){
+            falsch = 100;
+        }else if(getWrongVocabList().isEmpty()){
+            richtig = 20;
+        }else if(getWrongVocabList().isEmpty() && getHardVocabList().isEmpty()){
+            richtig = 100;
+        }else if(getHardVocabList().isEmpty()){
+            richtig = 10;
+            falsch = 90;
+        }else if(getHardVocabList().isEmpty() && getWrongVocabList().isEmpty()){
+            richtig = 100;
+        }else if(getHardVocabList().isEmpty() && getRightVocabList().isEmpty()){
+            falsch = 100;
+        }
+    }
+
+    public void setVocablist(DynArray vocablist) {
+        this.vocablist = vocablist;
+    }
 }
