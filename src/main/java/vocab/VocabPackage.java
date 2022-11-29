@@ -56,6 +56,8 @@ public class VocabPackage {
         return dynArray;
     }
 
+    // TODO add Operation hinzufügen, wobei geguckt werden soll, ob dieser Vokabel schon existiert.
+
     /*
     Aufteilung für die Vokabeln:        Wenn RICHTIG leer ist:          Wenn FALSCH leer ist:           Wenn HARD leer ist:
     RICHTIG=5%                          FALSCH=70%                      RICHTIG=20%                     RICHTIG=10%

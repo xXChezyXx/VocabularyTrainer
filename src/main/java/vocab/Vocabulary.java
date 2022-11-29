@@ -1,20 +1,21 @@
 package vocab;
 
 import utils.Difficulty;
+import utils.DynArray;
 
 public class Vocabulary {
 
     private String key;
-    private String value;
+    private DynArray value;
     private Difficulty difficulty;
 
-    public Vocabulary(String key, String value){
+    public Vocabulary(String key, DynArray value){
         this.key = key;
         this.value = value;
         this.difficulty = Difficulty.UNDEFINED;
     }
 
-    public Vocabulary(String key, String value, Difficulty difficulty){
+    public Vocabulary(String key, DynArray value, Difficulty difficulty){
         this.key = key;
         this.value = value;
         this.difficulty = difficulty;
@@ -28,7 +29,7 @@ public class Vocabulary {
         return key;
     }
 
-    public String getValue() {
+    public DynArray getValue() {
         return value;
     }
 
@@ -36,7 +37,7 @@ public class Vocabulary {
         this.key = key;
     }
 
-    public void setValue(String value) {
+    public void setValue(DynArray value) {
         this.value = value;
     }
 
