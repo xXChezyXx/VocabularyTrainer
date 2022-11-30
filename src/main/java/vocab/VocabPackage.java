@@ -1,5 +1,6 @@
 package vocab;
 
+import main.Main;
 import utils.Difficulty;
 import utils.DynArray;
 
@@ -66,6 +67,10 @@ public class VocabPackage {
                                            ------ Dabei hat Undefined Vorrang ------
     */
     public Vocabulary getRandomVocab(){
+        if(Main.pruefungsmodus){
+            int randomvocab = new Random().nextInt(vocablist.getLength());
+            return (Vocabulary) vocablist.getItem(randomvocab);
+        }
         if(!getUndefinedVocabList().isEmpty()){
             int randomvocab = new Random().nextInt(getUndefinedVocabList().getLength());
             return (Vocabulary) getUndefinedVocabList().getItem(randomvocab);

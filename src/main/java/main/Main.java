@@ -1,8 +1,8 @@
-import java.util.Scanner;
+package main;
 
 public class Main {
 
-    private static boolean pruefungsmodus = false;
+    public static boolean pruefungsmodus = false;
 
     public static void main(String[] args) {
         // Operation, die ausgeführt wird, wenn die App sich schließt
