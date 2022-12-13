@@ -8,12 +8,14 @@ import java.util.Random;
 
 public class VocabPackage {
 
+    private String name;
     private DynArray vocablist;
     private int richtig;
     private int falsch;
 
-    public VocabPackage(DynArray vocablist){
+    public VocabPackage(DynArray vocablist, String name){
         this.vocablist = vocablist;
+        this.name = name;
     }
 
     public DynArray getVocablist() {
@@ -38,6 +40,11 @@ public class VocabPackage {
         }
         return dynArray;
     }
+
+    public String getName() {
+        return name;
+    }
+
     public DynArray getHardVocabList() {
         DynArray dynArray = new DynArray();
         for (int i = 0;i < vocablist.getLength();i++){
@@ -107,6 +114,10 @@ public class VocabPackage {
         }else if(getHardVocabList().isEmpty() && getRightVocabList().isEmpty()){
             falsch = 100;
         }
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public void setVocablist(DynArray vocablist) {

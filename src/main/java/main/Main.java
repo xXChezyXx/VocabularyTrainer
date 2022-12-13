@@ -1,5 +1,9 @@
 package main;
 
+import gui.MainPage;
+
+import javax.swing.*;
+
 public class Main {
 
     public static boolean pruefungsmodus = false;
@@ -11,6 +15,8 @@ public class Main {
         }));
 
         // Unter dem Kommentar den Code schreiben
+        MainPage mainPage = new MainPage("Vokabeltrainer");
+        mainPage.setVisible(true);
 
     }
 

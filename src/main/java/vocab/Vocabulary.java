@@ -9,6 +9,14 @@ public class Vocabulary {
     private DynArray value;
     private Difficulty difficulty;
 
+    public Vocabulary(String key, String value){
+        this.key = key;
+        DynArray dynArray = new DynArray();
+        dynArray.append(value);
+        this.value = dynArray;
+        this.difficulty = Difficulty.UNDEFINED;
+    }
+
     public Vocabulary(String key, DynArray value){
         this.key = key;
         this.value = value;
