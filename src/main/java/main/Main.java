@@ -1,5 +1,7 @@
 package main;
 
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 import gui.MainPage;
 
 import javax.swing.*;
@@ -17,7 +19,6 @@ public class Main {
         // Unter dem Kommentar den Code schreiben
         MainPage mainPage = new MainPage("Vokabeltrainer");
         mainPage.setVisible(true);
-
     }
 
 }

@@ -10,11 +10,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="311ce7da-96e3-483e-b89f-2745f372a020" name="Changes" comment="Setup">
+      <change afterPath="$PROJECT_DIR$/src/main/java/gui/statistik/Karteibox.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/gui/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/MainPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vocab/VocabPackage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vocab/VocabPackage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vocab/Vocabulary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vocab/Vocabulary.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

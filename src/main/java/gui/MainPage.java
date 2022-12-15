@@ -1,5 +1,9 @@
 package gui;
 
+import gui.statistik.Karteibox;
+import vocab.VocabPackage;
+import vocab.Vocabulary;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -58,9 +62,57 @@ public class MainPage extends JFrame {
         deletekarteikasten.addActionListener(e -> {
         });
 
+        VocabPackage vocabPackage = new VocabPackage(null,"QWERTZUIOPASDFGH");
+        VocabPackage vocabPackage2 = new VocabPackage(null,"Testen");
+        VocabPackage vocabPackage3 = new VocabPackage(null,"Kein Bock");
+        VocabPackage vocabPackage4 = new VocabPackage(null,"vier");
+        VocabPackage vocabPackage5 = new VocabPackage(null,"fünf");
+        VocabPackage vocabPackage6 = new VocabPackage(null,"sechs");
+        VocabPackage vocabPackage7 = new VocabPackage(null,"sieben");
+        VocabPackage vocabPackage8 = new VocabPackage(null,"acht");
+        //Karteiboxen
+        //TODO dynamisch gestalten, sodass es nicht hardcoded ist
+        Karteibox test = new Karteibox(vocabPackage);
+        Karteibox test2 = new Karteibox(vocabPackage2);
+        Karteibox test3 = new Karteibox(vocabPackage3);
+        Karteibox test4 = new Karteibox(vocabPackage4);
+        Karteibox test5 = new Karteibox(vocabPackage5);
+        Karteibox test6 = new Karteibox(vocabPackage6);
+        Karteibox test7 = new Karteibox(vocabPackage7);
+        Karteibox test8 = new Karteibox(vocabPackage8);
+
+        //Liste der Karteikasten
+        JScrollPane jScrollPane = new JScrollPane();
+        jScrollPane.setBounds(10,10,888,630);
+        jScrollPane.setBackground(Color.black);
+        jScrollPane.createVerticalScrollBar();
+        jScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        jScrollPane.setLayout(null);
+        jScrollPane.add(test);
+        jScrollPane.add(test2);
+        test2.setBounds(296,10,276,100);
+        jScrollPane.add(test3);
+        test3.setBounds(582,10,276,100);
+        jScrollPane.add(test4);
+        test4.setBounds(10,120,276,100);
+        jScrollPane.add(test5);
+        test5.setBounds(10,230,276,100);
+        jScrollPane.add(test6);
+        test6.setBounds(10,340,276,100);
+        jScrollPane.add(test7);
+        test7.setBounds(10,450,276,100);
+        jScrollPane.add(test8);
+        test8.setBounds(10,560,276,100);
+
+
+
+
+        //ScrollPane
+
         //Container
         Container pane = getContentPane();
         pane.setLayout(null);
+        pane.add(jScrollPane);
         pane.add(search);
         pane.add(searchtext);
         pane.add(modus);
