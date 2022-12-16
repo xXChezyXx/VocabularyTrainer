@@ -3,6 +3,7 @@ package gui;
 import main.Main;
 import utils.DynArray;
 import vocab.VocabPackage;
+import vocab.Vocabulary;
 
 import javax.swing.*;
 import java.awt.*;
@@ -107,21 +108,10 @@ public class MainPage extends JFrame {
         });
 
         //TextField
-        //TODO Vereinfachen zu einer FUnktion in den ActionListener, das macht es einfacher
         JTextField searchtext = new JTextField();
         searchtext.setBounds(10,650,890,30);
         searchtext.addActionListener(e -> {
-            String[] strings = e.getActionCommand().split(" ");
-            DynArray sortedvocabpacket = new DynArray();
-            vocabPackage = Main.vocabpackagelist;
-            for(String s:strings){
-                for(int i = 0;i < vocabPackage.getLength();i++){
-                    if(((VocabPackage) vocabPackage.getItem(i)).getName().toLowerCase().contains(s.toLowerCase())){
-                        sortedvocabpacket.append(vocabPackage.getItem(i));
-                    }
-                }
-            }
-            vocabPackage = sortedvocabpacket;
+            filterVocabulary(e.getActionCommand());
             currentpage.set(1);
             maxpage = vocabPackage.getLength()/15+1;
             loadVocabPackages(page,jPanel,currentpage.get());
@@ -136,17 +126,7 @@ public class MainPage extends JFrame {
         search.setBounds(905,650,160,30);
         search.setFocusPainted(false);
         search.addActionListener(e -> {
-            String[] strings = searchtext.getText().split(" ");
-            DynArray sortedvocabpacket = new DynArray();
-            vocabPackage = Main.vocabpackagelist;
-            for(String s:strings){
-                for(int i = 0;i < vocabPackage.getLength();i++){
-                    if(((VocabPackage) vocabPackage.getItem(i)).getName().toLowerCase().contains(s.toLowerCase())){
-                        sortedvocabpacket.append(vocabPackage.getItem(i));
-                    }
-                }
-            }
-            vocabPackage = sortedvocabpacket;
+            filterVocabulary(searchtext.getText());
             currentpage.set(1);
             maxpage = vocabPackage.getLength()/15+1;
             loadVocabPackages(page,jPanel,currentpage.get());
@@ -201,6 +181,39 @@ public class MainPage extends JFrame {
         component.invalidate();
         component.validate();
         component.repaint();
+    }
+
+    private void filterVocabulary(String search){
+        String[] strings = search.split(" ");
+        DynArray sortedvocabpacket = new DynArray();
+        vocabPackage = Main.vocabpackagelist;
+        for(String s:strings){
+            for(int i = 0;i < vocabPackage.getLength();i++){
+                if(((VocabPackage) vocabPackage.getItem(i)).getName().toLowerCase().contains(s.toLowerCase())){
+                    sortedvocabpacket.append(vocabPackage.getItem(i));
+                }
+                DynArray vocablist = ((VocabPackage) vocabPackage.getItem(i)).getVocablist();
+                for(int j = 0;j < vocablist.getLength();j++){
+                    Vocabulary vocab = (Vocabulary) vocablist.getItem(j);
+                    if(vocab.getKey().toLowerCase().contains(s.toLowerCase())){
+                        sortedvocabpacket.append(vocabPackage.getItem(i));
+                        break;
+                    }
+                    boolean check = false;
+                    for(int k = 0;k < vocab.getValue().getLength();k++){
+                        if(((String) vocab.getValue().getItem(k)).toLowerCase().contains(s.toLowerCase())){
+                            sortedvocabpacket.append(vocabPackage.getItem(i));
+                            check = true;
+                            break;
+                        }
+                    }
+                    if (check){
+                        break;
+                    }
+                }
+            }
+        }
+        vocabPackage = sortedvocabpacket;
     }
 
 }
