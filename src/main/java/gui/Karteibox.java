@@ -1,4 +1,4 @@
-package gui.statistik;
+package gui;
 
 import vocab.VocabPackage;
 
@@ -17,6 +17,7 @@ public class Karteibox extends JPanel{
         open.setBounds(0,76,141,30);
         open.setFocusPainted(false);
         JButton delete = new JButton("Löschen");
+        delete.setFocusPainted(false);
         delete.setBounds(141,76,142,30);
         JLabel name = new JLabel(vocabPackage.getName(),SwingConstants.CENTER);
         name.setBounds(40,23,200,30);
