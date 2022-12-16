@@ -10,6 +10,8 @@ public class Main {
     public static boolean pruefungsmodus = false;
     public static DynArray vocabpackagelist = new DynArray();
 
+    public static MainPage mainPage;
+
     public static void main(String[] args) {
         // Operation, die ausgeführt wird, wenn die App sich schließt
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
@@ -17,6 +19,9 @@ public class Main {
         }));
 
         // Unter dem Kommentar den Code schreiben
+        //TODO Prüfungsmodus einstellen
+        //TODO Karteikasten erstellen
+        //TODO Karteikasten öffnen
 
         //TestVokabeln
         Vocabulary vocabulary = new Vocabulary("hello","world");
@@ -65,7 +70,7 @@ public class Main {
         vocabpackagelist.append(new VocabPackage(new DynArray(),"Sechszehn"));
         vocabpackagelist.append(new VocabPackage(new DynArray(),"Siebzehn"));
 
-        MainPage mainPage = new MainPage("Vokabeltrainer",1);
+        mainPage = new MainPage("Vokabeltrainer",1);
         mainPage.setVisible(true);
     }
 

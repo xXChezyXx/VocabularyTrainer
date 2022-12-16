@@ -13,31 +13,43 @@ public class MainPage extends JFrame {
 
     private int maxpage;
     private DynArray vocabPackage;
+    private AtomicInteger currentpage;
+    private JPanel jPanel;
+    private JLabel page;
+    private JButton previous;
+    private JButton next;
 
-    public MainPage(String title,int cp){
+    public MainPage(String title,int currentpage){
         super(title);
 
-        AtomicInteger currentpage = new AtomicInteger(cp);
+        this.currentpage = new AtomicInteger(currentpage);
         vocabPackage = Main.vocabpackagelist;
-        int vocablength = vocabPackage.getLength();
-        maxpage = vocablength/15+1;
+        maxpage = Math.max((int) Math.ceil(vocabPackage.getLength()/15d),1);
 
-        if(currentpage.get() > maxpage)return;
+        if(this.currentpage.get() > maxpage)return;
+
+        previous = new JButton("Vorherige Seite");
+        previous.setBounds(10,610,292,30);
+        previous.setFocusPainted(false);
+
+        next = new JButton("Nächste Seite");
+        next.setBounds(614,610,282,30);
+        next.setFocusPainted(false);
 
         //Label
         JLabel author = new JLabel("<html><center>Erstellt von:<br>Jannis Peschke<br>Malte Wübben<br>" +
                 "Leon Phan<br>Luca Kirschstein<br>Cedric Blabla<br>Dominik Schnüll</html>");
         author.setBounds(935,250,160,300);
 
-        JLabel page = new JLabel("Seite "+currentpage+" von "+maxpage,SwingConstants.CENTER);
+        page = new JLabel("Seite "+currentpage+" von "+maxpage,SwingConstants.CENTER);
         page.setBounds(302,610,312,30);
 
         //Panel für die Karteikarten
-        JPanel jPanel = new JPanel();
+        jPanel = new JPanel();
         jPanel.setBounds(10,10,888,590);
         jPanel.setBackground(Color.black);
         jPanel.setLayout(null);
-        loadVocabPackages(null, jPanel, currentpage.get());
+        loadVocabPackages();
 
         //GUI
         setSize(1080,720);
@@ -66,45 +78,18 @@ public class MainPage extends JFrame {
         createkarteikasten.addActionListener(e -> {
         });
 
-        JButton previous = new JButton("Vorherige Seite");
-        previous.setBounds(10,610,292,30);
-        previous.setFocusPainted(false);
-
-        JButton next = new JButton("Nächste Seite");
-        next.setBounds(614,610,282,30);
-        next.setFocusPainted(false);
-
         //Vorherige Seite
-        if (currentpage.get() == 1){
-            previous.setEnabled(false);
-        }
         previous.addActionListener(e -> {
-            currentpage.addAndGet(-1);
-            loadVocabPackages(page, jPanel, currentpage.get());
-            if (currentpage.get() == 1){
-                previous.setEnabled(false);
-            }
-            if(currentpage.get() < maxpage){
-                next.setEnabled(true);
-            }
-            reload(this);
+            this.currentpage.addAndGet(-1);
+            loadVocabPackages();
+            reload();
         });
 
         //Nächste Seite
-        if (currentpage.get() == maxpage){
-            next.setEnabled(false);
-        }
         next.addActionListener(e -> {
-            currentpage.addAndGet(+1);
-            loadVocabPackages(page, jPanel, currentpage.get());
-            if (currentpage.get() == maxpage){
-                next.setEnabled(false);
-            }
-            if (currentpage.get() != 1){
-                previous.setEnabled(true);
-            }
-            previous.setEnabled(true);
-            reload(this);
+            this.currentpage.addAndGet(+1);
+            loadVocabPackages();
+            reload();
         });
 
         //TextField
@@ -112,14 +97,13 @@ public class MainPage extends JFrame {
         searchtext.setBounds(10,650,890,30);
         searchtext.addActionListener(e -> {
             filterVocabulary(e.getActionCommand());
-            currentpage.set(1);
-            maxpage = vocabPackage.getLength()/15+1;
-            loadVocabPackages(page,jPanel,currentpage.get());
+            this.currentpage.set(1);
+            loadVocabPackages();
             previous.setEnabled(false);
-            if(currentpage.get() < maxpage){
+            if(this.currentpage.get() < maxpage){
                 next.setEnabled(true);
             }
-            reload(this);
+            reload();
         });
 
         JButton search = new JButton("Suchen");
@@ -127,14 +111,14 @@ public class MainPage extends JFrame {
         search.setFocusPainted(false);
         search.addActionListener(e -> {
             filterVocabulary(searchtext.getText());
-            currentpage.set(1);
-            maxpage = vocabPackage.getLength()/15+1;
-            loadVocabPackages(page,jPanel,currentpage.get());
+            this.currentpage.set(1);
+            maxpage = Math.max((int) Math.ceil(vocabPackage.getLength()/15d),1);
+            loadVocabPackages();
             previous.setEnabled(false);
-            if(currentpage.get() < maxpage){
+            if(this.currentpage.get() < maxpage){
                 next.setEnabled(true);
             }
-            reload(this);
+            reload();
         });
 
         //Container
@@ -152,13 +136,25 @@ public class MainPage extends JFrame {
 
     }
 
-    private void loadVocabPackages(JLabel pagetext, JPanel jPanel,int currentpage){
-        if(pagetext != null) {
-            pagetext.setText("Seite " + currentpage + " von " + maxpage);
+    public void loadVocabPackages(){
+        maxpage = Math.max((int) Math.ceil(vocabPackage.getLength()/15d),1);
+        previous.setEnabled(true);
+        next.setEnabled(true);
+        if(currentpage.get() >= maxpage){
+            next.setEnabled(false);
+            if(currentpage.get() > maxpage){
+                currentpage.set(maxpage);
+            }
+        }
+        if(currentpage.get() == 1){
+            previous.setEnabled(false);
+        }
+        if(page != null) {
+            page.setText("Seite " + currentpage + " von " + maxpage);
         }
         jPanel.removeAll();
         int height = 10;
-        for(int i = 15*currentpage-15;i < Math.min(15*currentpage, vocabPackage.getLength());i++){
+        for(int i = 15*currentpage.get()-15;i < Math.min(15*currentpage.get(), vocabPackage.getLength());i++){
             Karteibox karteibox = new Karteibox(((VocabPackage) vocabPackage.getItem(i)));
             switch (i % 3){
                 case 0:
@@ -176,14 +172,14 @@ public class MainPage extends JFrame {
         }
     }
 
-    private void reload(Component component){
-        SwingUtilities.updateComponentTreeUI(component);
-        component.invalidate();
-        component.validate();
-        component.repaint();
+    public void reload(){
+        SwingUtilities.updateComponentTreeUI(this);
+        this.invalidate();
+        this.validate();
+        this.repaint();
     }
 
-    private void filterVocabulary(String search){
+    public void filterVocabulary(String search){
         String[] strings = search.split(" ");
         DynArray sortedvocabpacket = new DynArray();
         vocabPackage = Main.vocabpackagelist;
@@ -191,6 +187,7 @@ public class MainPage extends JFrame {
             for(int i = 0;i < vocabPackage.getLength();i++){
                 if(((VocabPackage) vocabPackage.getItem(i)).getName().toLowerCase().contains(s.toLowerCase())){
                     sortedvocabpacket.append(vocabPackage.getItem(i));
+                    continue;
                 }
                 DynArray vocablist = ((VocabPackage) vocabPackage.getItem(i)).getVocablist();
                 for(int j = 0;j < vocablist.getLength();j++){
