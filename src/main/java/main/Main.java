@@ -1,14 +1,12 @@
 package main;
 
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
 import gui.MainPage;
-
-import javax.swing.*;
+import utils.DynArray;
 
 public class Main {
 
     public static boolean pruefungsmodus = false;
+    public static DynArray vocabpackagelist = new DynArray();
 
     public static void main(String[] args) {
         // Operation, die ausgeführt wird, wenn die App sich schließt

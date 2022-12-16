@@ -10,12 +10,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="311ce7da-96e3-483e-b89f-2745f372a020" name="Changes" comment="Setup">
-      <change afterPath="$PROJECT_DIR$/src/main/java/gui/statistik/Karteibox.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/gui/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/MainPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/statistik/Karteibox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/statistik/Karteibox.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vocab/VocabPackage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vocab/VocabPackage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,7 +192,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669847019250</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Leon ist ein Hs">
+      <created>1671120145487</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1671120145487</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -221,7 +227,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Setup" />
-    <option name="LAST_COMMIT_MESSAGE" value="Setup" />
+    <MESSAGE value="Leon ist ein Hs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Leon ist ein Hs" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

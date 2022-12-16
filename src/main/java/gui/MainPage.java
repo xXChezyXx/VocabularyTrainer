@@ -1,8 +1,8 @@
 package gui;
 
 import gui.statistik.Karteibox;
+import main.Main;
 import vocab.VocabPackage;
-import vocab.Vocabulary;
 
 import javax.swing.*;
 import java.awt.*;
@@ -30,11 +30,15 @@ public class MainPage extends JFrame {
         //Label
         JLabel author = new JLabel("<html><center>Erstellt von:<br>Jannis Peschke<br>Malte Wübben<br>" +
                 "Leon Phan<br>Luca Kirschstein<br>Cedric Blabla<br>Dominik Schnüll</html>");
-        author.setBounds(935,280,160,300);
+        author.setBounds(935,250,160,300);
+
+        JLabel page = new JLabel("Seite 1 von 1",SwingConstants.CENTER);
+        page.setBounds(302,610,312,30);
 
         //Button
         JButton search = new JButton("Suchen");
         search.setBounds(905,650,160,30);
+        search.setFocusPainted(false);
         search.addActionListener(e -> {
             System.out.println(searchtext.getText());
         });
@@ -43,11 +47,13 @@ public class MainPage extends JFrame {
         modus.setBounds(905,10,160,60);
         modus.setFocusPainted(false);
         modus.addActionListener(e -> {
-            if(modus.getText().contains("deaktivieren")) {
+            if(Main.pruefungsmodus) {
                 modus.setText("<html><center>Prüfungsmodus<br>aktivieren</html>");
+                Main.pruefungsmodus = false;
                 return;
             }
             modus.setText("<html><center>Prüfungsmodus<br>deaktivieren</html>");
+            Main.pruefungsmodus = true;
         });
 
         JButton createkarteikasten = new JButton("<html><center>Karteikasten<br>erstellen</html>");
@@ -56,10 +62,16 @@ public class MainPage extends JFrame {
         createkarteikasten.addActionListener(e -> {
         });
 
-        JButton deletekarteikasten = new JButton("<html><center>Karteikasten<br>löschen</html>");
-        deletekarteikasten.setBounds(905,190,160,60);
-        deletekarteikasten.setFocusPainted(false);
-        deletekarteikasten.addActionListener(e -> {
+        JButton previous = new JButton("Vorherige Seite");
+        previous.setBounds(10,610,292,30);
+        previous.setFocusPainted(false);
+        previous.addActionListener(e -> {
+        });
+
+        JButton next = new JButton("Nächste Seite");
+        next.setBounds(614,610,282,30);
+        next.setFocusPainted(false);
+        next.addActionListener(e -> {
         });
 
         VocabPackage vocabPackage = new VocabPackage(null,"QWERTZUIOPASDFGH");
@@ -83,26 +95,24 @@ public class MainPage extends JFrame {
 
         //Liste der Karteikasten
         JScrollPane jScrollPane = new JScrollPane();
-        jScrollPane.setBounds(10,10,888,630);
+        jScrollPane.setBounds(10,10,888,590);
         jScrollPane.setBackground(Color.black);
         jScrollPane.createVerticalScrollBar();
         jScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         jScrollPane.setLayout(null);
         jScrollPane.add(test);
         jScrollPane.add(test2);
-        test2.setBounds(296,10,276,100);
+        test2.setBounds(302,10,282,106);
         jScrollPane.add(test3);
-        test3.setBounds(582,10,276,100);
+        test3.setBounds(594,10,282,106);
         jScrollPane.add(test4);
-        test4.setBounds(10,120,276,100);
+        test4.setBounds(10,126,282,106);
         jScrollPane.add(test5);
-        test5.setBounds(10,230,276,100);
+        test5.setBounds(10,242,282,106);
         jScrollPane.add(test6);
-        test6.setBounds(10,340,276,100);
+        test6.setBounds(10,358,282,106);
         jScrollPane.add(test7);
-        test7.setBounds(10,450,276,100);
-        jScrollPane.add(test8);
-        test8.setBounds(10,560,276,100);
+        test7.setBounds(10,474,282,106);
 
 
 
@@ -112,13 +122,15 @@ public class MainPage extends JFrame {
         //Container
         Container pane = getContentPane();
         pane.setLayout(null);
-        pane.add(jScrollPane);
         pane.add(search);
+        pane.add(page);
         pane.add(searchtext);
         pane.add(modus);
+        pane.add(previous);
+        pane.add(next);
         pane.add(createkarteikasten);
-        pane.add(deletekarteikasten);
         pane.add(author);
+        pane.add(jScrollPane);
     }
 
 }

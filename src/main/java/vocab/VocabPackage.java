@@ -44,7 +44,6 @@ public class VocabPackage {
     public String getName() {
         return name;
     }
-
     public DynArray getHardVocabList() {
         DynArray dynArray = new DynArray();
         for (int i = 0;i < vocablist.getLength();i++){
