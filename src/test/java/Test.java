@@ -1,4 +1,6 @@
-import utils.DynArray;
+package test.java;
+
+import main.java.utils.DynArray;
 
 public class Test {
 

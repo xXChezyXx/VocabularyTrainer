@@ -1,7 +1,7 @@
-package vocab;
+package main.java.vocab;
 
-import utils.Difficulty;
-import utils.DynArray;
+import main.java.utils.Difficulty;
+import main.java.utils.DynArray;
 
 public class Vocabulary {
 

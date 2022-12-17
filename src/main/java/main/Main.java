@@ -1,9 +1,9 @@
-package main;
+package main.java.main;
 
-import gui.MainPage;
-import utils.DynArray;
-import vocab.VocabPackage;
-import vocab.Vocabulary;
+import main.java.gui.MainPage;
+import main.java.utils.DynArray;
+import main.java.vocab.VocabPackage;
+import main.java.vocab.Vocabulary;
 
 public class Main {
 

@@ -1,4 +1,4 @@
-package utils;
+package main.java.utils;
 
 /**
  * Write a description of class DynArray here.

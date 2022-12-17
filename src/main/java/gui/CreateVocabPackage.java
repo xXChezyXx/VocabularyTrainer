@@ -1,8 +1,8 @@
-package gui;
+package main.java.gui;
 
-import main.Main;
-import utils.DynArray;
-import vocab.VocabPackage;
+import main.java.main.Main;
+import main.java.utils.DynArray;
+import main.java.vocab.VocabPackage;
 
 import javax.swing.*;
 import java.awt.*;

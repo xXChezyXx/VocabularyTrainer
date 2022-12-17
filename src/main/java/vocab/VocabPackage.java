@@ -1,8 +1,8 @@
-package vocab;
+package main.java.vocab;
 
-import main.Main;
-import utils.Difficulty;
-import utils.DynArray;
+import main.java.main.Main;
+import main.java.utils.Difficulty;
+import main.java.utils.DynArray;
 
 import java.util.Random;
 
