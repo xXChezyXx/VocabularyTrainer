@@ -59,7 +59,6 @@ public class CreateVocabPackage extends JFrame{
     private void createNewVocabList(String newname){
         if(newname.toCharArray().length > 16 || newname.toCharArray().length == 0){
             error.setForeground(Color.red);
-            //reload();
             new Timer().schedule(new TimerTask() {
                 @Override
                 public void run() {
@@ -68,7 +67,8 @@ public class CreateVocabPackage extends JFrame{
             },1000);
             return;
         }
-        Main.vocabpackagelist.append(new VocabPackage(new DynArray(),newname));
+        VocabPackage newvocabpackage = new VocabPackage(new DynArray(),newname);
+        Main.vocabpackagelist.append(newvocabpackage);
         Main.mainPage.setEnabled(true);
         setVisible(false);
         dispose();

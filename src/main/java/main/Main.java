@@ -13,7 +13,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        FileConfiguration fileConfiguration = new FileConfiguration("C:\\TryHackMe_Material\\Vokabeln.json");
+        FileConfiguration fileConfiguration = new FileConfiguration("./Vokabeln.json");
 
         // Operation, die ausgeführt wird, wenn die App sich schließt
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {

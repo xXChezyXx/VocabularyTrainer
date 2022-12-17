@@ -84,9 +84,13 @@ public class DynArray {
             search.inhalt = obj;
         }
     }
-    
+
+    //TODO Herr Hattendorf Bescheid sagen, dass die delete Methode falsch ist
     public void delete(int index) {
         if(index == 0) {
+            if (this.first.nachfolger == null){
+                this.last = null;
+            }
             this.first = this.first.nachfolger;
         } else if(index == this.getLength() - 1 ) {
             Element search = this.first;
