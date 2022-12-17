@@ -1,5 +1,6 @@
 package main.java.main;
 
+import main.java.data.FileConfiguration;
 import main.java.gui.MainPage;
 import main.java.utils.DynArray;
 import main.java.vocab.VocabPackage;
@@ -13,61 +14,21 @@ public class Main {
     public static MainPage mainPage;
 
     public static void main(String[] args) {
+
+        FileConfiguration fileConfiguration = new FileConfiguration("C:\\TryHackMe_Material\\Vokabeln.json");
+
         // Operation, die ausgeführt wird, wenn die App sich schließt
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+            fileConfiguration.saveVocabPackage();
             System.out.println("App fährt herunter!");
         }));
 
         // Unter dem Kommentar den Code schreiben
         //TODO Prüfungsmodus einstellen
         //TODO Karteikasten öffnen
+        //TODO Vokabeln speichern
 
-        //TestVokabeln
-        Vocabulary vocabulary = new Vocabulary("hello","world");
-        DynArray test = new DynArray();
-        test.append(vocabulary);
-        vocabpackagelist.append(new VocabPackage(new DynArray(),"QWERTZUIOPASDFGH"));
-        vocabpackagelist.append(new VocabPackage(new DynArray(),"Testen"));
-        vocabpackagelist.append(new VocabPackage(test,"Kein Bock"));
-        vocabpackagelist.append(new VocabPackage(new DynArray(),"Vier"));
-        vocabpackagelist.append(new VocabPackage(new DynArray(),"Fünf"));
-        vocabpackagelist.append(new VocabPackage(new DynArray(),"Sechs"));
-        vocabpackagelist.append(new VocabPackage(new DynArray(),"Sieben"));
-        vocabpackagelist.append(new VocabPackage(new DynArray(),"Acht"));
-        vocabpackagelist.append(new VocabPackage(new DynArray(),"Neun"));
-        vocabpackagelist.append(new VocabPackage(new DynArray(),"Zehn"));
-        vocabpackagelist.append(new VocabPackage(new DynArray(),"Elf"));
-        vocabpackagelist.append(new VocabPackage(new DynArray(),"Zwölf"));
-        vocabpackagelist.append(new VocabPackage(new DynArray(),"Dreizehn"));
-        vocabpackagelist.append(new VocabPackage(new DynArray(),"Vierzehn"));
-        vocabpackagelist.append(new VocabPackage(new DynArray(),"Fünfzehn"));
-        vocabpackagelist.append(new VocabPackage(new DynArray(),"Vier"));
-        vocabpackagelist.append(new VocabPackage(new DynArray(),"Fünf"));
-        vocabpackagelist.append(new VocabPackage(new DynArray(),"Sechs"));
-        vocabpackagelist.append(new VocabPackage(new DynArray(),"Sieben"));
-        vocabpackagelist.append(new VocabPackage(new DynArray(),"Acht"));
-        vocabpackagelist.append(new VocabPackage(new DynArray(),"Neun"));
-        vocabpackagelist.append(new VocabPackage(new DynArray(),"Zehn"));
-        vocabpackagelist.append(new VocabPackage(new DynArray(),"Elf"));
-        vocabpackagelist.append(new VocabPackage(new DynArray(),"Zwölf"));
-        vocabpackagelist.append(new VocabPackage(new DynArray(),"Dreizehn"));
-        vocabpackagelist.append(new VocabPackage(new DynArray(),"Vierzehn"));
-        vocabpackagelist.append(new VocabPackage(new DynArray(),"Fünfzehn"));
-        vocabpackagelist.append(new VocabPackage(new DynArray(),"Sechszehn"));
-        vocabpackagelist.append(new VocabPackage(new DynArray(),"Siebzehn"));
-        vocabpackagelist.append(new VocabPackage(new DynArray(),"Kein Bock"));
-        vocabpackagelist.append(new VocabPackage(new DynArray(),"Vier"));
-        vocabpackagelist.append(new VocabPackage(new DynArray(),"Fünf"));
-        vocabpackagelist.append(new VocabPackage(new DynArray(),"Sechs"));
-        vocabpackagelist.append(new VocabPackage(new DynArray(),"Neun"));
-        vocabpackagelist.append(new VocabPackage(new DynArray(),"Zehn"));
-        vocabpackagelist.append(new VocabPackage(new DynArray(),"Elf"));
-        vocabpackagelist.append(new VocabPackage(new DynArray(),"Zwölf"));
-        vocabpackagelist.append(new VocabPackage(new DynArray(),"Dreizehn"));
-        vocabpackagelist.append(new VocabPackage(new DynArray(),"Vierzehn"));
-        vocabpackagelist.append(new VocabPackage(new DynArray(),"Fünfzehn"));
-        vocabpackagelist.append(new VocabPackage(new DynArray(),"Sechszehn"));
-        vocabpackagelist.append(new VocabPackage(new DynArray(),"Siebzehn"));
+        vocabpackagelist = fileConfiguration.loadVocablist();
 
         mainPage = new MainPage("Vokabeltrainer",1);
         mainPage.setVisible(true);

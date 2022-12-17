@@ -10,21 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="311ce7da-96e3-483e-b89f-2745f372a020" name="Changes" comment="Setup">
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/VocabularyTrainer/VocabularyTrainer.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/VocabularyTrainer/VocabularyTrainer.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/data/FileConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/FileConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/CreateVocabPackage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/CreateVocabPackage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/Karteibox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/Karteibox.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/MainPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/Difficulty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/Difficulty.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/DynArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/DynArray.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/Element.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/Element.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vocab/VocabPackage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vocab/VocabPackage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vocab/Vocabulary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vocab/Vocabulary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -257,7 +245,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671283817441</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Setup">
+      <created>1671286259997</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1671286259997</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
