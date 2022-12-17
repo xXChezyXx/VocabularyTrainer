@@ -8,6 +8,9 @@ import main.java.vocab.VocabPackage;
 import main.java.vocab.Vocabulary;
 
 import java.io.*;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
 import java.util.Scanner;
 
 public class FileConfiguration {
@@ -26,9 +29,12 @@ public class FileConfiguration {
     }
 
     public void saveVocabPackage() {
-        FileWriter fileWriter = null;
+        OutputStreamWriter fileWriter;
         try {
-            fileWriter = new FileWriter(this.file);
+            fileWriter = new OutputStreamWriter(
+                    Files.newOutputStream(this.file.toPath()),
+                    StandardCharsets.UTF_8.newEncoder()
+            );
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -36,6 +42,7 @@ public class FileConfiguration {
         for (int i = 0; i < Main.vocabpackagelist.getLength(); i++) {
             VocabPackage vocabPackage = (VocabPackage) Main.vocabpackagelist.getItem(i);
             JsonObject jsonPackage = new JsonObject();
+            System.out.println(vocabPackage.getName());
             jsonPackage.addProperty("name",vocabPackage.getName());
             JsonArray jsonvocabs = new JsonArray();
             for (int j = 0;j < vocabPackage.getVocablist().getLength(); j++){
@@ -66,17 +73,22 @@ public class FileConfiguration {
     }
 
     public DynArray loadVocablist(){
-        StringBuilder content = new StringBuilder();
+        ByteArrayOutputStream result = new ByteArrayOutputStream();
+        String content;
         try {
-            Scanner reader = new Scanner(this.file);
-            while (reader.hasNextLine()){
-                content.append(reader.nextLine());
+            InputStream inputStream = Files.newInputStream(this.file.toPath());
+            byte[] buffer = new byte[1024];
+            for (int length; (length = inputStream.read(buffer)) != -1; ) {
+                result.write(buffer, 0, length);
             }
-            reader.close();
-        } catch (FileNotFoundException e) {
+            content = result.toString("UTF-8");
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        JsonArray jsonArray = JsonParser.parseString(content.toString()).getAsJsonArray();
+        if(content.length() == 0){
+            return new DynArray();
+        }
+        JsonArray jsonArray = JsonParser.parseString(content).getAsJsonArray();
         DynArray allvocabpackages = new DynArray();
 
         for (int i = 0; i < jsonArray.size(); i++) {

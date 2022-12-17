@@ -19,9 +19,9 @@ public class CreateVocabPackage extends JFrame{
         super(title);
 
         //GUI
+        setResizable(false);
         setSize(300,180);
         setLocationRelativeTo(null);
-        setResizable(false);
 
         error = new JLabel("<html>Bitte wähle ein Name mit maximal 16<br>und mindestens 1 Buchstaben aus!</html>",SwingConstants.CENTER);
         error.setBounds(10,5,280,60);

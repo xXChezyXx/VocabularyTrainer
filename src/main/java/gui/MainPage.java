@@ -13,7 +13,7 @@ public class MainPage extends JFrame {
 
     private int maxpage;
     private DynArray vocabPackage;
-    private AtomicInteger currentpage;
+    private final AtomicInteger currentpage;
     private JPanel jPanel;
     private JLabel page;
     private JButton previous;
@@ -54,10 +54,10 @@ public class MainPage extends JFrame {
         loadVocabPackages();
 
         //GUI
-        setSize(1080,720);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setLocationRelativeTo(null);
         setResizable(false);
+        setSize(1080,720);
+        setLocationRelativeTo(null);
 
         //Button
 

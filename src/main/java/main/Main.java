@@ -3,8 +3,6 @@ package main.java.main;
 import main.java.data.FileConfiguration;
 import main.java.gui.MainPage;
 import main.java.utils.DynArray;
-import main.java.vocab.VocabPackage;
-import main.java.vocab.Vocabulary;
 
 public class Main {
 
