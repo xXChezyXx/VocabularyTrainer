@@ -97,7 +97,7 @@ public class DynArray {
             this.last = search;
         } else {
             Element search = this.first;
-            for(int i = 0; i < index - 2; i++) {
+            for(int i = 0; i < index - 1; i++) {
                 search = search.nachfolger;
             }
             search.nachfolger = search.nachfolger.nachfolger;

@@ -19,6 +19,8 @@ public class MainPage extends JFrame {
     private JButton previous;
     private JButton next;
 
+    private JTextField searchtext;
+
     public MainPage(String title,int currentpage){
         super(title);
 
@@ -76,6 +78,9 @@ public class MainPage extends JFrame {
         createkarteikasten.setBounds(905,100,160,60);
         createkarteikasten.setFocusPainted(false);
         createkarteikasten.addActionListener(e -> {
+            CreateVocabPackage createVocabPackage = new CreateVocabPackage("Neue Karteikarte erstellen");
+            createVocabPackage.setVisible(true);
+            setEnabled(false);
         });
 
         //Vorherige Seite
@@ -93,10 +98,10 @@ public class MainPage extends JFrame {
         });
 
         //TextField
-        JTextField searchtext = new JTextField();
+        searchtext = new JTextField();
         searchtext.setBounds(10,650,890,30);
         searchtext.addActionListener(e -> {
-            filterVocabulary(e.getActionCommand());
+            filterVocabulary();
             this.currentpage.set(1);
             loadVocabPackages();
             previous.setEnabled(false);
@@ -110,7 +115,7 @@ public class MainPage extends JFrame {
         search.setBounds(905,650,160,30);
         search.setFocusPainted(false);
         search.addActionListener(e -> {
-            filterVocabulary(searchtext.getText());
+            filterVocabulary();
             this.currentpage.set(1);
             maxpage = Math.max((int) Math.ceil(vocabPackage.getLength()/15d),1);
             loadVocabPackages();
@@ -179,8 +184,8 @@ public class MainPage extends JFrame {
         this.repaint();
     }
 
-    public void filterVocabulary(String search){
-        String[] strings = search.split(" ");
+    public void filterVocabulary(){
+        String[] strings = searchtext.getText().split(" ");
         DynArray sortedvocabpacket = new DynArray();
         vocabPackage = Main.vocabpackagelist;
         for(String s:strings){

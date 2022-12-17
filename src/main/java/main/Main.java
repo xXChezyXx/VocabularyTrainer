@@ -20,7 +20,6 @@ public class Main {
 
         // Unter dem Kommentar den Code schreiben
         //TODO Prüfungsmodus einstellen
-        //TODO Karteikasten erstellen
         //TODO Karteikasten öffnen
 
         //TestVokabeln

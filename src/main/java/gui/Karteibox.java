@@ -18,6 +18,9 @@ public class Karteibox extends JPanel{
         JButton open = new JButton("Öffnen");
         open.setBounds(0,76,141,30);
         open.setFocusPainted(false);
+        open.addActionListener(e -> {
+
+        });
 
         JButton delete = new JButton("Löschen");
         delete.setFocusPainted(false);
@@ -26,9 +29,10 @@ public class Karteibox extends JPanel{
             for (int i = 0; i < Main.vocabpackagelist.getLength(); i++) {
                 if (Main.vocabpackagelist.getItem(i) == vocabPackage){
                     Main.vocabpackagelist.delete(i);
-                    Main.mainPage.filterVocabulary("");
+                    Main.mainPage.filterVocabulary();
                     Main.mainPage.loadVocabPackages();
                     Main.mainPage.reload();
+                    break;
                 }
             }
         });
