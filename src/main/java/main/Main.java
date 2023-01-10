@@ -24,7 +24,7 @@ public class Main {
         // Unter dem Kommentar den Code schreiben
         //TODO Prüfungsmodus einstellen
         //TODO Karteikasten öffnen
-        //TODO Vokabeln speichern
+
 
         vocabpackagelist = fileConfiguration.loadVocablist();
 

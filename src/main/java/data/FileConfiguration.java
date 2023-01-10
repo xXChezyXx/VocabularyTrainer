@@ -8,10 +8,8 @@ import main.java.vocab.VocabPackage;
 import main.java.vocab.Vocabulary;
 
 import java.io.*;
-import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
-import java.util.Scanner;
 
 public class FileConfiguration {
 

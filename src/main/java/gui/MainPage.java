@@ -78,8 +78,8 @@ public class MainPage extends JFrame {
         createkarteikasten.setBounds(905,100,160,60);
         createkarteikasten.setFocusPainted(false);
         createkarteikasten.addActionListener(e -> {
-            CreateVocabPackage createVocabPackage = new CreateVocabPackage("Neue Karteikarte erstellen");
-            createVocabPackage.setVisible(true);
+            CreateVocabPackageGUI createVocabPackageGUI = new CreateVocabPackageGUI("Neue Karteikarte erstellen");
+            createVocabPackageGUI.setVisible(true);
             setEnabled(false);
         });
 

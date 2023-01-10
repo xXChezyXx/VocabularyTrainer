@@ -11,11 +11,11 @@ import java.awt.event.WindowEvent;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class CreateVocabPackage extends JFrame{
+public class CreateVocabPackageGUI extends JFrame{
 
     private final JLabel error;
 
-    public CreateVocabPackage(String title){
+    public CreateVocabPackageGUI(String title){
         super(title);
 
         //GUI
