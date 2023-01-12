@@ -15,6 +15,8 @@ public class FileConfiguration {
 
     private final File file;
 
+
+    //erstellt eine neue file unter gegebenen Dateipfad
     public FileConfiguration(String file) {
         this.file = new File(file);
         if (!getFile().exists()) {
@@ -26,6 +28,7 @@ public class FileConfiguration {
         }
     }
 
+    //speichert VocabPackages nach Programmende, sodass es wieder nach einen Programmstart geladen werden kann
     public void saveVocabPackage() {
         OutputStreamWriter fileWriter;
         try {
@@ -70,6 +73,7 @@ public class FileConfiguration {
         }
     }
 
+    //lädt VocabPackages nach Programmstart TODO Refactor Name to loadVocabList
     public DynArray loadVocablist(){
         ByteArrayOutputStream result = new ByteArrayOutputStream();
         String content;
