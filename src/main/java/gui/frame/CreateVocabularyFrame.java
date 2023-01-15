@@ -1,8 +1,6 @@
 package main.java.gui.frame;
 
 import main.java.main.Main;
-import main.java.utils.DynArray;
-import main.java.vocab.VocabPackage;
 import main.java.vocab.Vocabulary;
 
 import javax.swing.*;
