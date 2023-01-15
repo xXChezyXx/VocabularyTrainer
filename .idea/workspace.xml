@@ -10,10 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="311ce7da-96e3-483e-b89f-2745f372a020" name="Changes" comment="Vokabeln">
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/frame/CreateVocabularyFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/frame/CreateVocabularyFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/frame/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/frame/MainFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/gui/panel/KarteiboxPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/panel/KarteiboxPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/panel/VocabPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/panel/VocabPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/panel/MenuPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/panel/MenuPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -308,7 +308,21 @@
       <option name="project" value="LOCAL" />
       <updated>1673741391272</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Vokabeln">
+      <created>1673742447139</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1673742447139</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Vokabeln">
+      <created>1673742472765</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1673742472765</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

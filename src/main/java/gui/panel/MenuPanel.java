@@ -64,10 +64,20 @@ public class MenuPanel extends JPanel {
             if(Main.pruefungsmodus) {
                 modus.setText("<html><center>Prüfungsmodus<br>aktivieren</html>");
                 Main.pruefungsmodus = false;
+                for (Component component:vocablistpanel.getComponents()){
+                    KarteiboxPanel karteiboxpanel = (KarteiboxPanel) component;
+                    karteiboxpanel.getOpen().setText("Öffnen");
+                }
+                Main.mainframe.reload();
                 return;
             }
             modus.setText("<html><center>Prüfungsmodus<br>deaktivieren</html>");
             Main.pruefungsmodus = true;
+            for (Component component:vocablistpanel.getComponents()){
+                KarteiboxPanel karteiboxpanel = (KarteiboxPanel) component;
+                karteiboxpanel.getOpen().setText("Lernen");
+            }
+            Main.mainframe.reload();
         });
 
         JButton createkarteikasten = new JButton("<html><center>Karteikasten<br>erstellen</html>");

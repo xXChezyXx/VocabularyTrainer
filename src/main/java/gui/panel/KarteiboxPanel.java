@@ -10,18 +10,23 @@ public class KarteiboxPanel extends JPanel{
 
     //848 / 3 = 276 Breite
     //530 / 5 = 106 Höhe
+    private final JButton open;
     public KarteiboxPanel(VocabPackage vocabPackage){
         setBackground(Color.white);
         setLayout(null);
 
-        JButton open = new JButton("Öffnen");
+        open = new JButton("Öffnen");
         open.setBounds(0,76,141,30);
         open.setFocusPainted(false);
         open.addActionListener(e -> {
-            VocabPanel vocabpanel = new VocabPanel(vocabPackage);
-            Main.mainframe.setVocabpanel(vocabpanel);
-            Main.mainframe.setPanel(1);
-            Main.mainframe.reload();
+            if (open.getText().equalsIgnoreCase("Öffnen")) {
+                VocabPanel vocabpanel = new VocabPanel(vocabPackage);
+                Main.mainframe.setVocabpanel(vocabpanel);
+                Main.mainframe.setPanel(1);
+                Main.mainframe.reload();
+                return;
+            }
+            //TODO LearnPanel
         });
 
         JButton delete = new JButton("Löschen");
@@ -46,4 +51,7 @@ public class KarteiboxPanel extends JPanel{
         add(delete);
     }
 
+    public JButton getOpen() {
+        return open;
+    }
 }
