@@ -1,5 +1,6 @@
 package main.java.gui.frame;
 
+import main.java.gui.panel.VocabularyTablePanel;
 import main.java.main.Main;
 import main.java.vocab.Vocabulary;
 
@@ -68,6 +69,7 @@ public class CreateVocabularyFrame extends JFrame {
         Main.mainframe.setEnabled(true);
         setVisible(false);
         dispose();
+        Main.mainframe.getVocabpanel().setTablepanel(VocabularyTablePanel.VocabularyTable(Main.mainframe.getVocabpanel().getVocabpackage()));
         Main.mainframe.reload();
     }
 

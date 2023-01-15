@@ -10,7 +10,7 @@ import java.awt.*;
 public class VocabPanel extends JPanel {
 
     private VocabPackage vocabpackage;
-    private JPanel tablepanel;
+    private JScrollPane tablepanel;
     private JPanel singlevocabpanel;
     private JButton homebutton;
     private JButton newvocabbutton;
@@ -30,9 +30,7 @@ public class VocabPanel extends JPanel {
         singlevocabpanel.setBounds(10,10,700,620);
         singlevocabpanel.setBackground(Color.black);
 
-        tablepanel = new JPanel(); //TODO Einfach eine Klassen machen, geht somit einfacher
-        tablepanel.setBounds(730,50,340,660);
-        tablepanel.setBackground(Color.black);
+        tablepanel = VocabularyTablePanel.VocabularyTable(this.vocabpackage);
 
         newvocabbutton = new JButton("Vokabel erstellen");
         newvocabbutton.setBounds(730,10,165,30);
@@ -98,5 +96,17 @@ public class VocabPanel extends JPanel {
 
     public VocabPackage getVocabpackage() {
         return vocabpackage;
+    }
+
+    public void setTablepanel(JScrollPane tablepanel) {
+        for (int i = 0;i < getComponents().length;i++){
+            try {
+                if (getComponent(i).getName().equalsIgnoreCase("SCROLL")) {
+                    remove(i);
+                    break;
+                }
+            }catch (NullPointerException ignored){}
+        }
+        add(tablepanel);
     }
 }
