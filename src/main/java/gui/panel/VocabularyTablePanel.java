@@ -4,6 +4,7 @@ import main.java.vocab.VocabPackage;
 import main.java.vocab.Vocabulary;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 
 public class VocabularyTablePanel {
 
@@ -25,10 +26,21 @@ public class VocabularyTablePanel {
             vocabularys[i][1] = stringBuilder.toString();
         }
 
-        JTable table = new JTable(vocabularys,header);
+        JTable table = new JTable();
         table.setBounds(0,0,340,660);
         table.setRowHeight(58);
         table.setFillsViewportHeight(true);
+        DefaultTableModel tableModel = new DefaultTableModel(vocabularys,header) {
+
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                //all cells false
+                return false;
+            }
+        };
+
+        table.setModel(tableModel);
+
 
         JScrollPane jScrollPane = new JScrollPane(table);
         jScrollPane.setBounds(730,50,340,660);

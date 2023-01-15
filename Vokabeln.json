@@ -3,7 +3,7 @@
     "name": "Englisch",
     "vocablist": [
       {
-        "key": "HUrensohn",
+        "key": "Hurensohn",
         "difficulty": "UNDEFINED",
         "value": [
           "Son of a bitch",
@@ -111,6 +111,10 @@
   },
   {
     "name": "hellou",
+    "vocablist": []
+  },
+  {
+    "name": "fjdklasöfjölasdk",
     "vocablist": []
   }
 ]
