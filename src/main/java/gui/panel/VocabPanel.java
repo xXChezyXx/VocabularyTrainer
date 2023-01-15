@@ -1,13 +1,15 @@
 package main.java.gui.panel;
 
+import main.java.gui.frame.CreateVocabularyFrame;
 import main.java.main.Main;
+import main.java.vocab.VocabPackage;
 
 import javax.swing.*;
 import java.awt.*;
 
 public class VocabPanel extends JPanel {
 
-    private String title;
+    private VocabPackage vocabpackage;
     private JPanel tablepanel;
     private JPanel singlevocabpanel;
     private JButton homebutton;
@@ -18,8 +20,8 @@ public class VocabPanel extends JPanel {
     private JButton searchbutton;
     private JTextField searchtext;
 
-    public VocabPanel(String title){
-        this.title = title;
+    public VocabPanel(VocabPackage vocabpackage){
+        this.vocabpackage = vocabpackage;
 
         setPreferredSize(new Dimension(1080,720));
         setLayout(null);
@@ -36,7 +38,9 @@ public class VocabPanel extends JPanel {
         newvocabbutton.setBounds(730,10,165,30);
         newvocabbutton.setFocusPainted(false);
         newvocabbutton.addActionListener(e -> {
-
+            CreateVocabularyFrame createVocabularyFrame = new CreateVocabularyFrame("Neue Vokabel erstellen");
+            createVocabularyFrame.setVisible(true);
+            Main.mainframe.setEnabled(false);
         });
 
         homebutton = new JButton("Zurück zum Menu");
@@ -92,7 +96,7 @@ public class VocabPanel extends JPanel {
         add(searchtext);
     }
 
-    public String getTitle() {
-        return title;
+    public VocabPackage getVocabpackage() {
+        return vocabpackage;
     }
 }

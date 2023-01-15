@@ -1,7 +1,15 @@
 [
   {
     "name": "Englisch",
-    "vocablist": []
+    "vocablist": [
+      {
+        "key": "HUrensohn",
+        "difficulty": "UNDEFINED",
+        "value": [
+          ""
+        ]
+      }
+    ]
   },
   {
     "name": "Deutsch",

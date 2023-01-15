@@ -3,6 +3,7 @@ package main.java.gui.frame;
 import main.java.main.Main;
 import main.java.utils.DynArray;
 import main.java.vocab.VocabPackage;
+import main.java.vocab.Vocabulary;
 
 import javax.swing.*;
 import java.awt.*;
@@ -28,11 +29,11 @@ public class CreateVocabularyFrame extends JFrame {
 
         JTextField newvocabulary = new JTextField();
         newvocabulary.setBounds(50,65,200,30);
-        newvocabulary.addActionListener(e -> createNewVocabList(e.getActionCommand()));
+        newvocabulary.addActionListener(e -> createNewVocabulary(e.getActionCommand()));
 
         JButton confirm = new JButton("Karteikarte erstellen");
         confirm.setBounds(50,100,200,30);
-        confirm.addActionListener(e -> createNewVocabList(newvocabulary.getText()));
+        confirm.addActionListener(e -> createNewVocabulary(newvocabulary.getText()));
         confirm.setFocusPainted(false);
 
         addWindowListener(new WindowAdapter() {
@@ -53,7 +54,7 @@ public class CreateVocabularyFrame extends JFrame {
         pane.add(error);
     }
 
-    private void createNewVocabList(String newname){
+    private void createNewVocabulary(String newname){
         if(newname.toCharArray().length > 16 || newname.toCharArray().length == 0){
             error.setForeground(Color.red);
             new Timer().schedule(new TimerTask() {
@@ -64,13 +65,11 @@ public class CreateVocabularyFrame extends JFrame {
             },1000);
             return;
         }
-        VocabPackage newvocabpackage = new VocabPackage(new DynArray(),newname);
-        Main.vocabpackagelist.append(newvocabpackage);
+        Vocabulary vocabulary = new Vocabulary(newname,"");
+        Main.mainframe.getVocabpanel().getVocabpackage().addVocabulary(vocabulary);
         Main.mainframe.setEnabled(true);
         setVisible(false);
         dispose();
-        Main.mainframe.getMenupanel().filterVocabulary();
-        Main.mainframe.getMenupanel().loadVocabPackages();
         Main.mainframe.reload();
     }
 

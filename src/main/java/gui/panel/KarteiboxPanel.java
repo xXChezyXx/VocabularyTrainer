@@ -18,7 +18,7 @@ public class KarteiboxPanel extends JPanel{
         open.setBounds(0,76,141,30);
         open.setFocusPainted(false);
         open.addActionListener(e -> {
-            VocabPanel vocabpanel = new VocabPanel(vocabPackage.getName());
+            VocabPanel vocabpanel = new VocabPanel(vocabPackage);
             Main.mainframe.setVocabpanel(vocabpanel);
             Main.mainframe.setPanel(1);
             Main.mainframe.reload();

@@ -17,7 +17,7 @@ public class MainFrame extends JFrame {
         this.panel = 0;
         //GUI
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        //setResizable(false);
+        setResizable(false);
         setSize(1080,720);
         setLocationRelativeTo(null);
 
@@ -25,13 +25,14 @@ public class MainFrame extends JFrame {
         this.menupanel = new MenuPanel(1);
         setTitle(menupanel.getTitle());
 
-        this.vocabpanel = new VocabPanel("");
-
         //Container
         Container pane = getContentPane();
-        //pane.setLayout(null);
         pane.add(menupanel);
         pack();
+    }
+
+    public VocabPanel getVocabpanel() {
+        return vocabpanel;
     }
 
     public void setVocabpanel(VocabPanel vocabpanel) {
@@ -47,7 +48,7 @@ public class MainFrame extends JFrame {
                 break;
             case 1:
                 getContentPane().add(vocabpanel);
-                setTitle(vocabpanel.getTitle());
+                setTitle(vocabpanel.getVocabpackage().getName());
                 break;
         }
         pack();
