@@ -22,7 +22,6 @@ public class Main {
         }));
 
         // Unter dem Kommentar den Code schreiben
-        //TODO Karteikasten öffnen
 
         vocabpackagelist = fileConfiguration.loadVocablist();
 

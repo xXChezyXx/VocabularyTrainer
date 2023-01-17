@@ -85,7 +85,6 @@ public class DynArray {
         }
     }
 
-    //TODO Herr Hattendorf Bescheid sagen, dass die delete Methode falsch ist
     public void delete(int index) {
         if(index == 0) {
             if (this.first.nachfolger == null){

@@ -1,5 +1,6 @@
 package main.java.gui.panel;
 
+import main.java.main.Main;
 import main.java.vocab.Vocabulary;
 
 import javax.swing.*;
@@ -39,6 +40,14 @@ public class VocabularyShowPanel extends JPanel {
         vocabvalue.setText(stringBuilder.substring(2));
         vocabvalue.setBorder(BorderFactory.createLineBorder(Color.black));
         vocabvaluepanel.add(vocabvalue);
+
+        vocabkey.addActionListener(e -> {
+            //TODO Einstellen, dass man die Fragen und Antworten umbenennen kann
+        });
+
+        vocabvalue.addActionListener(e -> {
+
+        });
 
         add(vocabkeypanel);
         add(vocabvaluepanel);

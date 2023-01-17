@@ -94,6 +94,7 @@ public class VocabPanel extends JPanel {
                             setTablePanel(VocabularyTablePanel.VocabularyTable(this.vocabpackage,i));
                         }catch (NullPointerException exception){
                             //TODO hinzufügen, dass es auch rückwärts geht, wenn man es löscht
+                            //TODO Die Button dabei beachten mit back und forward und hoffen, dass es klappt
                             getSinglevocabpanel().getVocabkey().setText("");
                             getSinglevocabpanel().getVocabvalue().setText("");
                             setTablePanel(VocabularyTablePanel.VocabularyTable(this.vocabpackage,i-1));
