@@ -1,5 +1,6 @@
 package main.java.gui.panel;
 
+import main.java.main.Main;
 import main.java.vocab.VocabPackage;
 import main.java.vocab.Vocabulary;
 
@@ -34,13 +35,22 @@ public class VocabularyTablePanel {
 
             @Override
             public boolean isCellEditable(int row, int column) {
-                //all cells false
                 return false;
             }
         };
 
         table.setModel(tableModel);
-
+        table.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                int row = table.rowAtPoint(evt.getPoint());
+                if (row >= 0) {
+                    System.out.println(table.getValueAt(row,0));
+                    Main.mainframe.getVocabpanel().getSinglevocabpanel().getVocabkey().setText((String) table.getValueAt(row,0));
+                    Main.mainframe.getVocabpanel().getSinglevocabpanel().getVocabvalue().setText(((String) table.getValueAt(row,1)).replaceAll("<html>","").replaceAll("</html>","").replaceAll("<br>",", "));
+                }
+            }
+        });
 
         JScrollPane jScrollPane = new JScrollPane(table);
         jScrollPane.setBounds(730,50,340,660);

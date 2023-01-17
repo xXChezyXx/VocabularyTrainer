@@ -69,7 +69,7 @@ public class CreateVocabularyFrame extends JFrame {
         Main.mainframe.setEnabled(true);
         setVisible(false);
         dispose();
-        Main.mainframe.getVocabpanel().setTablepanel(VocabularyTablePanel.VocabularyTable(Main.mainframe.getVocabpanel().getVocabpackage()));
+        Main.mainframe.getVocabpanel().setTablePanel(VocabularyTablePanel.VocabularyTable(Main.mainframe.getVocabpanel().getVocabpackage()));
         Main.mainframe.reload();
     }
 

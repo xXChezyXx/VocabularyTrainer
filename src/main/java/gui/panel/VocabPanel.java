@@ -3,6 +3,7 @@ package main.java.gui.panel;
 import main.java.gui.frame.CreateVocabularyFrame;
 import main.java.main.Main;
 import main.java.vocab.VocabPackage;
+import main.java.vocab.Vocabulary;
 
 import javax.swing.*;
 import java.awt.*;
@@ -11,7 +12,7 @@ public class VocabPanel extends JPanel {
 
     private VocabPackage vocabpackage;
     private JScrollPane tablepanel;
-    private JPanel singlevocabpanel;
+    private VocabularyShowPanel singlevocabpanel;
     private JButton homebutton;
     private JButton newvocabbutton;
     private JButton backbutton;
@@ -26,9 +27,7 @@ public class VocabPanel extends JPanel {
         setPreferredSize(new Dimension(1080,720));
         setLayout(null);
 
-        singlevocabpanel = new JPanel(); //TODO Einfach eine Klassen machen, geht somit einfacher
-        singlevocabpanel.setBounds(10,10,700,620);
-        singlevocabpanel.setBackground(Color.black);
+        singlevocabpanel = new VocabularyShowPanel(vocabpackage.getVocablist().isEmpty()?new Vocabulary("",""):(Vocabulary) vocabpackage.getVocablist().getItem(0));
 
         tablepanel = VocabularyTablePanel.VocabularyTable(this.vocabpackage);
 
@@ -60,7 +59,26 @@ public class VocabPanel extends JPanel {
         deletebutton.setBounds(248,640,224,30);
         deletebutton.setFocusPainted(false);
         deletebutton.addActionListener(e -> {
-
+            if(!getSinglevocabpanel().getVocabkey().getText().equalsIgnoreCase("")) {
+                for (int i = 0;i<this.vocabpackage.getVocablist().getLength();i++){
+                    if (getSinglevocabpanel().getVocabkey().getText().equalsIgnoreCase(((Vocabulary) this.vocabpackage.getVocablist().getItem(i)).getKey())){
+                        this.vocabpackage.getVocablist().delete(i);
+                        setTablePanel(VocabularyTablePanel.VocabularyTable(this.vocabpackage));
+                        try{
+                            getSinglevocabpanel().getVocabkey().setText(((Vocabulary) this.vocabpackage.getVocablist().getItem(i)).getKey());
+                            StringBuilder stringBuilder = new StringBuilder();
+                            for (int j = 0;j < ((Vocabulary) this.vocabpackage.getVocablist().getItem(i)).getValue().getLength();j++){
+                                stringBuilder.append(", ").append(((Vocabulary) this.vocabpackage.getVocablist().getItem(i)).getValue().getItem(j));
+                            }
+                            getSinglevocabpanel().getVocabvalue().setText(stringBuilder.substring(2));
+                        }catch (NullPointerException exception){
+                            getSinglevocabpanel().getVocabkey().setText("");
+                            getSinglevocabpanel().getVocabvalue().setText("");
+                        }
+                        Main.mainframe.reload();
+                    }
+                }
+            }
         });
 
         forwardbutton = new JButton("Nächste Vokabel");
@@ -94,11 +112,15 @@ public class VocabPanel extends JPanel {
         add(searchtext);
     }
 
+    public VocabularyShowPanel getSinglevocabpanel() {
+        return singlevocabpanel;
+    }
+
     public VocabPackage getVocabpackage() {
         return vocabpackage;
     }
 
-    public void setTablepanel(JScrollPane tablepanel) {
+    public void setTablePanel(JScrollPane tablepanel) {
         for (int i = 0;i < getComponents().length;i++){
             try {
                 if (getComponent(i).getName().equalsIgnoreCase("SCROLL")) {

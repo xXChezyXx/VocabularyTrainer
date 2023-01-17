@@ -26,13 +26,6 @@
         ]
       },
       {
-        "key": "sus",
-        "difficulty": "UNDEFINED",
-        "value": [
-          ""
-        ]
-      },
-      {
         "key": "WARUm",
         "difficulty": "UNDEFINED",
         "value": [
@@ -41,20 +34,6 @@
       },
       {
         "key": "oge",
-        "difficulty": "UNDEFINED",
-        "value": [
-          ""
-        ]
-      },
-      {
-        "key": "please",
-        "difficulty": "UNDEFINED",
-        "value": [
-          ""
-        ]
-      },
-      {
-        "key": "endlich",
         "difficulty": "UNDEFINED",
         "value": [
           ""
@@ -87,19 +66,20 @@
         "value": [
           ""
         ]
-      },
+      }
+    ]
+  },
+  {
+    "name": "Deutsch",
+    "vocablist": [
       {
-        "key": "nonsense",
+        "key": "plsss",
         "difficulty": "UNDEFINED",
         "value": [
           ""
         ]
       }
     ]
-  },
-  {
-    "name": "Deutsch",
-    "vocablist": []
   },
   {
     "name": "aha",
