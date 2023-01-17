@@ -42,7 +42,6 @@ public class FileConfiguration {
         for (int i = 0; i < Main.vocabpackagelist.getLength(); i++) {
             VocabPackage vocabPackage = (VocabPackage) Main.vocabpackagelist.getItem(i);
             JsonObject jsonPackage = new JsonObject();
-            System.out.println(vocabPackage.getName());
             jsonPackage.addProperty("name",vocabPackage.getName());
             JsonArray jsonvocabs = new JsonArray();
             for (int j = 0;j < vocabPackage.getVocablist().getLength(); j++){

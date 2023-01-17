@@ -9,6 +9,8 @@ import javax.swing.table.DefaultTableModel;
 
 public class VocabularyTablePanel {
 
+    //TODO Tabelle zum Vokabel markieren, wenn man zum nächsten Vokabel möchte
+
     public static JScrollPane VocabularyTable(VocabPackage vocabPackage){
 
         String[][] vocabularys = new String[vocabPackage.getVocablist().getLength()][2];
@@ -45,7 +47,6 @@ public class VocabularyTablePanel {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 int row = table.rowAtPoint(evt.getPoint());
                 if (row >= 0) {
-                    System.out.println(table.getValueAt(row,0));
                     Main.mainframe.getVocabpanel().getSinglevocabpanel().getVocabkey().setText((String) table.getValueAt(row,0));
                     Main.mainframe.getVocabpanel().getSinglevocabpanel().getVocabvalue().setText(((String) table.getValueAt(row,1)).replaceAll("<html>","").replaceAll("</html>","").replaceAll("<br>",", "));
                 }
