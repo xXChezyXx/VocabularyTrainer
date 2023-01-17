@@ -69,7 +69,14 @@ public class CreateVocabularyFrame extends JFrame {
         Main.mainframe.setEnabled(true);
         setVisible(false);
         dispose();
-        Main.mainframe.getVocabpanel().setTablePanel(VocabularyTablePanel.VocabularyTable(Main.mainframe.getVocabpanel().getVocabpackage()));
+        int last = Main.mainframe.getVocabpanel().getVocabpackage().getVocablist().getLength()-1;
+        Main.mainframe.getVocabpanel().setTablePanel(VocabularyTablePanel.VocabularyTable(Main.mainframe.getVocabpanel().getVocabpackage(),last));
+        Main.mainframe.getVocabpanel().getSinglevocabpanel().getVocabkey().setText(((Vocabulary) Main.mainframe.getVocabpanel().getVocabpackage().getVocablist().getItem(last)).getKey());
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int j = 0;j < ((Vocabulary) Main.mainframe.getVocabpanel().getVocabpackage().getVocablist().getItem(last)).getValue().getLength();j++){
+            stringBuilder.append(", ").append(((Vocabulary) Main.mainframe.getVocabpanel().getVocabpackage().getVocablist().getItem(last)).getValue().getItem(j));
+        }
+        Main.mainframe.getVocabpanel().getSinglevocabpanel().getVocabvalue().setText(stringBuilder.substring(2));
         Main.mainframe.reload();
     }
 

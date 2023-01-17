@@ -9,9 +9,7 @@ import javax.swing.table.DefaultTableModel;
 
 public class VocabularyTablePanel {
 
-    //TODO Tabelle zum Vokabel markieren, wenn man zum nächsten Vokabel möchte
-
-    public static JScrollPane VocabularyTable(VocabPackage vocabPackage){
+    public static JScrollPane VocabularyTable(VocabPackage vocabPackage,int row){
 
         String[][] vocabularys = new String[vocabPackage.getVocablist().getLength()][2];
         String[] header = {"Frage","Antwort"};
@@ -42,6 +40,8 @@ public class VocabularyTablePanel {
         };
 
         table.setModel(tableModel);
+        table.getSelectionModel().setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        table.getSelectionModel().setSelectionInterval(row, row);
         table.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -49,6 +49,14 @@ public class VocabularyTablePanel {
                 if (row >= 0) {
                     Main.mainframe.getVocabpanel().getSinglevocabpanel().getVocabkey().setText((String) table.getValueAt(row,0));
                     Main.mainframe.getVocabpanel().getSinglevocabpanel().getVocabvalue().setText(((String) table.getValueAt(row,1)).replaceAll("<html>","").replaceAll("</html>","").replaceAll("<br>",", "));
+                    Main.mainframe.getVocabpanel().getBackbutton().setEnabled(true);
+                    Main.mainframe.getVocabpanel().getForwardbutton().setEnabled(true);
+                    if(row == 0){
+                        Main.mainframe.getVocabpanel().getBackbutton().setEnabled(false);
+                    }
+                    if(row == Main.mainframe.getVocabpanel().getVocabpackage().getVocablist().getLength()-1){
+                        Main.mainframe.getVocabpanel().getForwardbutton().setEnabled(false);
+                    }
                 }
             }
         });
