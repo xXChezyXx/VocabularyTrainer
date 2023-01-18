@@ -84,21 +84,17 @@ public class VocabPanel extends JPanel {
                 for (int i = 0;i<this.vocabpackage.getVocablist().getLength();i++){
                     if (getSinglevocabpanel().getVocabkey().getText().equalsIgnoreCase(((Vocabulary) this.vocabpackage.getVocablist().getItem(i)).getKey())){
                         this.vocabpackage.getVocablist().delete(i);
-                        try{
-                            getSinglevocabpanel().getVocabkey().setText(((Vocabulary) this.vocabpackage.getVocablist().getItem(i)).getKey());
-                            StringBuilder stringBuilder = new StringBuilder();
-                            for (int j = 0;j < ((Vocabulary) this.vocabpackage.getVocablist().getItem(i)).getValue().getLength();j++){
-                                stringBuilder.append(", ").append(((Vocabulary) this.vocabpackage.getVocablist().getItem(i)).getValue().getItem(j));
-                            }
-                            getSinglevocabpanel().getVocabvalue().setText(stringBuilder.substring(2));
-                            setTablePanel(VocabularyTablePanel.VocabularyTable(this.vocabpackage,i));
-                        }catch (NullPointerException exception){
-                            //TODO hinzufügen, dass es auch rückwärts geht, wenn man es löscht
-                            //TODO Die Button dabei beachten mit back und forward und hoffen, dass es klappt
-                            getSinglevocabpanel().getVocabkey().setText("");
-                            getSinglevocabpanel().getVocabvalue().setText("");
-                            setTablePanel(VocabularyTablePanel.VocabularyTable(this.vocabpackage,i-1));
+                        int count = i;
+                        if (count == this.vocabpackage.getVocablist().getLength()){
+                            count--;
                         }
+                        getSinglevocabpanel().getVocabkey().setText(((Vocabulary) this.vocabpackage.getVocablist().getItem(count)).getKey());
+                        StringBuilder stringBuilder = new StringBuilder();
+                        for (int j = 0;j < ((Vocabulary) this.vocabpackage.getVocablist().getItem(count)).getValue().getLength();j++){
+                            stringBuilder.append(", ").append(((Vocabulary) this.vocabpackage.getVocablist().getItem(count)).getValue().getItem(j));
+                        }
+                        getSinglevocabpanel().getVocabvalue().setText(stringBuilder.substring(2));
+                        setTablePanel(VocabularyTablePanel.VocabularyTable(this.vocabpackage,count));
                         Main.mainframe.reload();
                         return;
                     }
@@ -154,7 +150,7 @@ public class VocabPanel extends JPanel {
         add(newvocabbutton);
         add(forwardbutton);
         add(deletebutton);
-        //add(searchbutton); TODO Falls noch Zeit übrig ist, kann man das noch fixxen
+        //add(searchbutton); TODO Falls noch Zeit übrig ist, kann man das noch programmieren
         //add(searchtext);
     }
 

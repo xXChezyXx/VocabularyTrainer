@@ -113,7 +113,6 @@ public class VocabPackage {
         }
     }
 
-    // TODO add Operation hinzufügen, wobei geguckt werden soll, ob dieser Vokabel schon existiert.
     public void addVocabulary(Vocabulary vocab){
         for (int i = 0; i < vocablist.getLength(); i++) {
             Vocabulary comparedvocab = (Vocabulary) vocablist.getItem(i);
@@ -127,7 +126,7 @@ public class VocabPackage {
             for (int j = 0; j < vocab.getValue().getLength(); j++) {
                 if (comparedvocab.getKey().toLowerCase().equals(vocab.getValue().getItem(j))){
                     vocab.getValue().delete(j);
-                    comparedvocab.setValue(addValuesTogether(comparedvocab.getValue(),vocab.getValue()));
+                    comparedvocab.setValue(addValuesTogether(comparedvocab.getValue(),vocab.getKey()));
                     return;
                 }
             }
@@ -135,18 +134,8 @@ public class VocabPackage {
         vocablist.append(vocab);
     }
 
-    private DynArray addValuesTogether(DynArray value1, DynArray value2){
-        for (int i = 0; i < value1.getLength(); i++) {
-            for (int j = 0; j < value2.getLength(); j++) {
-                if(value1.getItem(i).equals(value2.getItem(j))){
-                    value2.delete(j);
-                    break;
-                }
-            }
-        }
-        for (int i = 0; i < value2.getLength(); i++) {
-            value1.append(value2.getItem(i));
-        }
+    private DynArray addValuesTogether(DynArray value1, String value2){
+        value1.append(value2);
         return value1;
     }
 

@@ -1,6 +1,5 @@
 package main.java.gui.panel;
 
-import main.java.main.Main;
 import main.java.vocab.Vocabulary;
 
 import javax.swing.*;
@@ -10,23 +9,22 @@ public class VocabularyShowPanel extends JPanel {
 
     JPanel vocabkeypanel;
     JPanel vocabvaluepanel;
-    JTextField vocabkey;
-    JTextField vocabvalue;
+    JLabel vocabkey;
+    JLabel vocabvalue;
 
     public VocabularyShowPanel(Vocabulary vocabulary){
         setBounds(10,10,700,620);
         setBackground(Color.black);
         setLayout(null);
 
-        vocabkey = new JTextField("",50);
-        vocabvalue = new JTextField("",50);
+        vocabkey = new JLabel();
+        vocabvalue = new JLabel();
 
         vocabkeypanel = new JPanel();
         vocabkeypanel.setBounds(50,50,600,235);
         vocabkeypanel.setBackground(Color.white);
         vocabkeypanel.setLayout(new GridBagLayout());
         vocabkey.setText(vocabulary.getKey());
-        vocabkey.setBorder(BorderFactory.createLineBorder(Color.black));
         vocabkeypanel.add(vocabkey);
 
         vocabvaluepanel = new JPanel();
@@ -38,26 +36,17 @@ public class VocabularyShowPanel extends JPanel {
             stringBuilder.append(", ").append(vocabulary.getValue().getItem(i));
         }
         vocabvalue.setText(stringBuilder.substring(2));
-        vocabvalue.setBorder(BorderFactory.createLineBorder(Color.black));
         vocabvaluepanel.add(vocabvalue);
-
-        vocabkey.addActionListener(e -> {
-            //TODO Einstellen, dass man die Fragen und Antworten umbenennen kann
-        });
-
-        vocabvalue.addActionListener(e -> {
-
-        });
 
         add(vocabkeypanel);
         add(vocabvaluepanel);
     }
 
-    public JTextField getVocabkey() {
+    public JLabel getVocabkey() {
         return vocabkey;
     }
 
-    public JTextField getVocabvalue() {
+    public JLabel getVocabvalue() {
         return vocabvalue;
     }
 }

@@ -10,7 +10,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="311ce7da-96e3-483e-b89f-2745f372a020" name="Changes" comment="Vokabeln">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vokabeln.json" beforeDir="false" afterPath="$PROJECT_DIR$/Vokabeln.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/frame/CreateVocabularyFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/frame/CreateVocabularyFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/panel/VocabPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/panel/VocabPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/gui/panel/VocabularyShowPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/panel/VocabularyShowPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vocab/VocabPackage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vocab/VocabPackage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -361,7 +366,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673993758812</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Vokabeln">
+      <created>1673995409275</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1673995409275</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -413,11 +425,6 @@
         <PinnedItemInfo parentTag="main.java.utils.DynArray" memberName="first" />
       </pinned-members>
     </pin-to-top-manager>
-    <watches-manager>
-      <configuration name="Application">
-        <watch expression="tablepanel" />
-      </configuration>
-    </watches-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

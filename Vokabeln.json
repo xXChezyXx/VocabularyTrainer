@@ -3,96 +3,34 @@
     "name": "Englisch",
     "vocablist": [
       {
-        "key": "Hurensohn",
+        "key": "bank",
         "difficulty": "UNDEFINED",
         "value": [
-          "Son of a bitch",
-          "Bastard",
-          "Missgeburt"
+          "bank",
+          "bench"
+        ]
+      },
+      {
+        "key": "blabla",
+        "difficulty": "UNDEFINED",
+        "value": [
+          "test",
+          "warum?"
         ]
       },
       {
         "key": "test",
         "difficulty": "UNDEFINED",
         "value": [
-          ""
+          "bruh",
+          "hm"
         ]
       },
       {
-        "key": "mies",
+        "key": "tes",
         "difficulty": "UNDEFINED",
         "value": [
-          ""
-        ]
-      },
-      {
-        "key": "WARUm",
-        "difficulty": "UNDEFINED",
-        "value": [
-          ""
-        ]
-      },
-      {
-        "key": "oge",
-        "difficulty": "UNDEFINED",
-        "value": [
-          ""
-        ]
-      },
-      {
-        "key": "huh",
-        "difficulty": "UNDEFINED",
-        "value": [
-          ""
-        ]
-      },
-      {
-        "key": "hmmmmmm",
-        "difficulty": "UNDEFINED",
-        "value": [
-          ""
-        ]
-      },
-      {
-        "key": "pls",
-        "difficulty": "UNDEFINED",
-        "value": [
-          ""
-        ]
-      },
-      {
-        "key": "lol",
-        "difficulty": "UNDEFINED",
-        "value": [
-          ""
-        ]
-      },
-      {
-        "key": "alles gone",
-        "difficulty": "UNDEFINED",
-        "value": [
-          ""
-        ]
-      },
-      {
-        "key": "Ficken",
-        "difficulty": "UNDEFINED",
-        "value": [
-          ""
-        ]
-      },
-      {
-        "key": "Okay",
-        "difficulty": "UNDEFINED",
-        "value": [
-          ""
-        ]
-      },
-      {
-        "key": "Reicht auch",
-        "difficulty": "UNDEFINED",
-        "value": [
-          ""
+          "mal sehen"
         ]
       }
     ]
