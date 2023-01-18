@@ -6,6 +6,11 @@ import main.java.utils.DynArray;
 
 import java.util.Random;
 
+
+/*Dieser Code definiert eine Klasse mit dem Namen "VocabPackage",
+die einen Namen, eine Liste von Vokabeln (die in einem DynArray gespeichert sind)
+und verschiedene Zähler für richtige und falsche Antworten enthält.*/
+
 public class VocabPackage {
 
     private String name;
@@ -18,10 +23,12 @@ public class VocabPackage {
         this.name = name;
     }
 
+    // getVocablist() gibt das gesamte Vokabelliste zurück.
     public DynArray getVocablist() {
         return vocablist;
     }
 
+    // getRightVocabList() gibt eine Liste mit allen Vokabeln zurück, die als "richtig" markiert sind.
     public DynArray getRightVocabList() {
         DynArray dynArray = new DynArray();
         for (int i = 0;i < vocablist.getLength();i++){
@@ -31,6 +38,8 @@ public class VocabPackage {
         }
         return dynArray;
     }
+
+    // getWrongVocabList() gibt eine Liste mit allen Vokabeln zurück, die als "falsch" markiert sind.
     public DynArray getWrongVocabList() {
         DynArray dynArray = new DynArray();
         for (int i = 0;i < vocablist.getLength();i++){
@@ -41,9 +50,13 @@ public class VocabPackage {
         return dynArray;
     }
 
+
+    // getName() gibt den Namen des Vokabellisten zurück.
     public String getName() {
         return name;
     }
+
+    //getHardVocabList() gibt eine Liste mit allen Vokabeln zurück, die als "schwer" markiert sind.
     public DynArray getHardVocabList() {
         DynArray dynArray = new DynArray();
         for (int i = 0;i < vocablist.getLength();i++){
@@ -53,6 +66,8 @@ public class VocabPackage {
         }
         return dynArray;
     }
+
+    //getUndefinedVocabList() gibt eine Liste mit allen Vokabeln zurück, die als "undefiniert" markiert sind.
     public DynArray getUndefinedVocabList() {
         DynArray dynArray = new DynArray();
         for (int i = 0;i < vocablist.getLength();i++){
@@ -70,6 +85,9 @@ public class VocabPackage {
     HARD=25%
                                            ------ Dabei hat Undefined Vorrang ------
     */
+    /* getRandomVocab() gibt eine zufällige Vokabel aus der Liste zurück.
+    Wenn der Prüfungsmodus aktiviert ist, wird eine zufällige Vokabel aus der gesamten Liste ausgewählt.
+    Andernfalls werden die Vokabeln nach ihrer Schwierigkeit ausgewählt, wobei die "undefinierten" Vokabeln Vorrang haben.*/
     public Vocabulary getRandomVocab(){
         if(Main.pruefungsmodus){
             int randomvocab = new Random().nextInt(vocablist.getLength());
@@ -92,6 +110,8 @@ public class VocabPackage {
         return (Vocabulary) getUndefinedVocabList().getItem(randomhard);
     }
 
+    /*  setProbability() berechnet die Wahrscheinlichkeiten, mit denen Vokabeln ausgewählt werden
+     , basierend auf den Prozentsätzen, die im Kommentar beschrieben sind.*/
     private void setProbability(){
         richtig = 0;
         falsch = 0;
