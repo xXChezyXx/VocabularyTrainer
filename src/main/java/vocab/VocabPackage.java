@@ -159,6 +159,11 @@ public class VocabPackage {
 
     //addValuesTogether() erhöht die Anzahl der richtigen und falschen Antworten um die Werte, die in einer gegebenen Vokabel gespeichert sind.
     private DynArray addValuesTogether(DynArray value1, String value2){
+        for (int i = 0;i < value1.getLength();i++){
+            if(((String) value1.getItem(i)).equalsIgnoreCase(value2)){
+                return value1;
+            }
+        }
         value1.append(value2);
         return value1;
     }

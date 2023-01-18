@@ -123,7 +123,7 @@ public class LearnPanel extends JPanel {
                     }
                 }
                 updateSolution(solution, "Falsch, die richtige Antwort wäre: \"" + stringBuilder.substring(2) + "\"!");
-                if(questioncount > 15){
+                if(questioncount >= 15){
                     confirmbutton.setText("Ergebnisse ansehen");
                 }else {
                     confirmbutton.setText("Nächste Vokabel");
