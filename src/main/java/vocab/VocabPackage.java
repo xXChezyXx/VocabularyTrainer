@@ -133,6 +133,8 @@ public class VocabPackage {
         }
     }
 
+
+    //addVocabulary(Vocabulary vocab) fügt eine neue Vokabel zur Liste hinzu.
     public void addVocabulary(Vocabulary vocab){
         for (int i = 0; i < vocablist.getLength(); i++) {
             Vocabulary comparedvocab = (Vocabulary) vocablist.getItem(i);
@@ -154,15 +156,21 @@ public class VocabPackage {
         vocablist.append(vocab);
     }
 
+
+    //addValuesTogether() erhöht die Anzahl der richtigen und falschen Antworten um die Werte, die in einer gegebenen Vokabel gespeichert sind.
     private DynArray addValuesTogether(DynArray value1, String value2){
         value1.append(value2);
         return value1;
     }
 
+
+    // setName(String name) setzt den Namen der Vokabellisten auf den angegebenen Wert.
     public void setName(String name) {
         this.name = name;
     }
 
+
+    //setVocablist(DynArray vocablist) setzt die Vokabelliste auf die angegebene Liste.
     public void setVocablist(DynArray vocablist) {
         this.vocablist = vocablist;
     }
