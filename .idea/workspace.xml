@@ -10,10 +10,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="311ce7da-96e3-483e-b89f-2745f372a020" name="Changes" comment="Vokabeln">
+      <change afterPath="$PROJECT_DIR$/src/main/java/gui/panel/ResultPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vokabeln.json" beforeDir="false" afterPath="$PROJECT_DIR$/Vokabeln.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/gui/frame/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/frame/MainFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/panel/KarteiboxPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/panel/KarteiboxPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/gui/panel/LearnPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/panel/LearnPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/statistik/Statistik.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +38,6 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="SWAP_SIDES_IN_COMPARE_BRANCHES" value="true" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -378,7 +379,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674070106679</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Vokabeln">
+      <created>1674075628590</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1674075628590</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

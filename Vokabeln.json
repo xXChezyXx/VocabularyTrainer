@@ -4,7 +4,7 @@
     "vocablist": [
       {
         "key": "bank",
-        "difficulty": "UNDEFINED",
+        "difficulty": "FALSCH",
         "value": [
           "bank",
           "bench"
@@ -12,7 +12,7 @@
       },
       {
         "key": "blabla",
-        "difficulty": "UNDEFINED",
+        "difficulty": "FALSCH",
         "value": [
           "test",
           "warum?"
@@ -20,7 +20,7 @@
       },
       {
         "key": "test",
-        "difficulty": "UNDEFINED",
+        "difficulty": "FALSCH",
         "value": [
           "bruh",
           "hm"
@@ -28,7 +28,7 @@
       },
       {
         "key": "tes",
-        "difficulty": "UNDEFINED",
+        "difficulty": "RICHTIG",
         "value": [
           "mal sehen"
         ]

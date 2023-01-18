@@ -2,6 +2,7 @@ package main.java.gui.frame;
 
 import main.java.gui.panel.LearnPanel;
 import main.java.gui.panel.MenuPanel;
+import main.java.gui.panel.ResultPanel;
 import main.java.gui.panel.VocabPanel;
 
 import javax.swing.*;
@@ -12,6 +13,7 @@ public class MainFrame extends JFrame {
     private MenuPanel menupanel;
     private VocabPanel vocabpanel;
     private LearnPanel learnpanel;
+    private ResultPanel resultPanel;
     private int panel;
 
     public MainFrame(){
@@ -40,8 +42,8 @@ public class MainFrame extends JFrame {
         this.vocabpanel = vocabpanel;
     }
 
-    public LearnPanel getLearnpanel() {
-        return learnpanel;
+    public void setResultPanel(ResultPanel resultPanel) {
+        this.resultPanel = resultPanel;
     }
 
     public void setLearnpanel(LearnPanel learnpanel) {
@@ -62,6 +64,11 @@ public class MainFrame extends JFrame {
             case 2:
                 getContentPane().add(learnpanel);
                 setTitle(learnpanel.getTitle());
+                break;
+            case 3:
+                getContentPane().add(resultPanel);
+                setTitle("Ergebnisse");
+                break;
         }
         pack();
         SwingUtilities.updateComponentTreeUI(this);
