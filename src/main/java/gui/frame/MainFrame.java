@@ -1,5 +1,6 @@
 package main.java.gui.frame;
 
+import main.java.gui.panel.LearnPanel;
 import main.java.gui.panel.MenuPanel;
 import main.java.gui.panel.VocabPanel;
 
@@ -9,8 +10,8 @@ import java.awt.*;
 public class MainFrame extends JFrame {
 
     private MenuPanel menupanel;
-
     private VocabPanel vocabpanel;
+    private LearnPanel learnpanel;
     private int panel;
 
     public MainFrame(){
@@ -39,6 +40,14 @@ public class MainFrame extends JFrame {
         this.vocabpanel = vocabpanel;
     }
 
+    public LearnPanel getLearnpanel() {
+        return learnpanel;
+    }
+
+    public void setLearnpanel(LearnPanel learnpanel) {
+        this.learnpanel = learnpanel;
+    }
+
     public void reload(){
         getContentPane().removeAll();
         switch (panel){
@@ -50,6 +59,9 @@ public class MainFrame extends JFrame {
                 getContentPane().add(vocabpanel);
                 setTitle(vocabpanel.getVocabpackage().getName());
                 break;
+            case 2:
+                getContentPane().add(learnpanel);
+                setTitle(learnpanel.getTitle());
         }
         pack();
         SwingUtilities.updateComponentTreeUI(this);

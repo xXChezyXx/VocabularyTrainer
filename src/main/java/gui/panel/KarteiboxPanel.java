@@ -26,7 +26,10 @@ public class KarteiboxPanel extends JPanel{
                 Main.mainframe.reload();
                 return;
             }
-            //TODO LearnPanel
+            LearnPanel learnpanel = new LearnPanel(vocabPackage);
+            Main.mainframe.setLearnpanel(learnpanel);
+            Main.mainframe.setPanel(2);
+            Main.mainframe.reload();
         });
 
         JButton delete = new JButton("Löschen");

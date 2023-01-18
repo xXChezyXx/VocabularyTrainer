@@ -11,11 +11,9 @@
   <component name="ChangeListManager">
     <list default="true" id="311ce7da-96e3-483e-b89f-2745f372a020" name="Changes" comment="Vokabeln">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vokabeln.json" beforeDir="false" afterPath="$PROJECT_DIR$/Vokabeln.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/frame/CreateVocabularyFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/frame/CreateVocabularyFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/panel/VocabPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/panel/VocabPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/panel/VocabularyShowPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/panel/VocabularyShowPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vocab/VocabPackage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vocab/VocabPackage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/frame/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/frame/MainFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/panel/KarteiboxPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/panel/KarteiboxPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/panel/LearnPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/panel/LearnPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -373,7 +371,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673995409275</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Vokabeln">
+      <created>1674070106679</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1674070106679</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
