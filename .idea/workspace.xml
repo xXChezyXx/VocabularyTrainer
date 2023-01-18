@@ -10,12 +10,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="311ce7da-96e3-483e-b89f-2745f372a020" name="Changes" comment="Vokabeln">
-      <change afterPath="$PROJECT_DIR$/src/main/java/gui/panel/ResultPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Vokabeln.json" beforeDir="false" afterPath="$PROJECT_DIR$/Vokabeln.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/frame/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/frame/MainFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/frame/CreateVocabularyFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/frame/CreateVocabularyFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/gui/panel/LearnPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/panel/LearnPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/statistik/Statistik.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/panel/ResultPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/panel/ResultPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/panel/VocabPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/panel/VocabPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/panel/VocabularyTablePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/panel/VocabularyTablePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vocab/VocabPackage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vocab/VocabPackage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -386,7 +389,21 @@
       <option name="project" value="LOCAL" />
       <updated>1674075628590</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Vokabeln">
+      <created>1674078826520</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1674078826520</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Vokabeln">
+      <created>1674079225330</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1674079225330</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

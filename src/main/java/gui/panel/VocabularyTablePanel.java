@@ -41,7 +41,7 @@ public class VocabularyTablePanel {
 
         table.setModel(tableModel);
         table.getSelectionModel().setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-        table.getSelectionModel().setSelectionInterval(row, row);
+        if(row >= 0) table.getSelectionModel().setSelectionInterval(row, row);
         table.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {

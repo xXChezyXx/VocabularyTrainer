@@ -14,7 +14,6 @@ public class LearnPanel extends JPanel {
     private int maxstreakcount;
     private int rightcount;
     private int wrongcount;
-    private int hardcount;
     private int questioncount;
     private int streakcount;
     private Vocabulary randomvocab;
@@ -35,7 +34,6 @@ public class LearnPanel extends JPanel {
         maxstreakcount = 0;
         rightcount = 0;
         wrongcount = 0;
-        hardcount = 0;
         streakcount = 0;
         questioncount = 1;
 
@@ -77,7 +75,6 @@ public class LearnPanel extends JPanel {
             confirmbutton.setVisible(true);
             yesbutton.setVisible(false);
             nobutton.setVisible(false);
-            hardcount++;
             updatePanel();
             Main.mainframe.reload();
         });
@@ -92,7 +89,6 @@ public class LearnPanel extends JPanel {
             confirmbutton.setVisible(true);
             yesbutton.setVisible(false);
             nobutton.setVisible(false);
-            rightcount++;
             updateButtons(yesbutton,nobutton);
             updatePanel();
             Main.mainframe.reload();
@@ -114,6 +110,7 @@ public class LearnPanel extends JPanel {
                         nobutton.setVisible(true);
                         questioncount++;
                         streakcount++;
+                        rightcount++;
                         if (streakcount > maxstreakcount){
                             maxstreakcount = streakcount;
                         }
@@ -178,7 +175,7 @@ public class LearnPanel extends JPanel {
 
     public void updatePanel(){
         if(questioncount > 15){
-            Main.mainframe.setResultPanel(new ResultPanel(maxstreakcount,rightcount,wrongcount,hardcount));
+            Main.mainframe.setResultPanel(new ResultPanel(maxstreakcount,rightcount,wrongcount));
             Main.mainframe.setPanel(3);
             Main.mainframe.reload();
             return;

@@ -18,8 +18,6 @@ public class VocabPanel extends JPanel {
     private JButton backbutton;
     private JButton forwardbutton;
     private final JButton deletebutton;
-    private final JButton searchbutton;
-    private final JTextField searchtext;
 
     public VocabPanel(VocabPackage vocabpackage){
         this.vocabpackage = vocabpackage;
@@ -88,15 +86,23 @@ public class VocabPanel extends JPanel {
                         if (count == this.vocabpackage.getVocablist().getLength()){
                             count--;
                         }
-                        getSinglevocabpanel().getVocabkey().setText(((Vocabulary) this.vocabpackage.getVocablist().getItem(count)).getKey());
-                        StringBuilder stringBuilder = new StringBuilder();
-                        for (int j = 0;j < ((Vocabulary) this.vocabpackage.getVocablist().getItem(count)).getValue().getLength();j++){
-                            stringBuilder.append(", ").append(((Vocabulary) this.vocabpackage.getVocablist().getItem(count)).getValue().getItem(j));
+                        try {
+                            getSinglevocabpanel().getVocabkey().setText(((Vocabulary) this.vocabpackage.getVocablist().getItem(count)).getKey());
+                            StringBuilder stringBuilder = new StringBuilder();
+                            for (int j = 0; j < ((Vocabulary) this.vocabpackage.getVocablist().getItem(count)).getValue().getLength(); j++) {
+                                stringBuilder.append(", ").append(((Vocabulary) this.vocabpackage.getVocablist().getItem(count)).getValue().getItem(j));
+                            }
+                            getSinglevocabpanel().getVocabvalue().setText(stringBuilder.substring(2));
+                            setTablePanel(VocabularyTablePanel.VocabularyTable(this.vocabpackage, count));
+                            Main.mainframe.reload();
+                            return;
+                        }catch (NullPointerException exception){
+                            getSinglevocabpanel().getVocabkey().setText("");
+                            getSinglevocabpanel().getVocabvalue().setText("");
+                            setTablePanel(VocabularyTablePanel.VocabularyTable(this.vocabpackage, -1));
+                            Main.mainframe.reload();
+
                         }
-                        getSinglevocabpanel().getVocabvalue().setText(stringBuilder.substring(2));
-                        setTablePanel(VocabularyTablePanel.VocabularyTable(this.vocabpackage,count));
-                        Main.mainframe.reload();
-                        return;
                     }
                 }
             }
@@ -130,19 +136,6 @@ public class VocabPanel extends JPanel {
             }
         });
 
-        searchbutton = new JButton("Vokabel suchen");
-        searchbutton.setBounds(572,680,138,30);
-        searchbutton.setFocusPainted(false);
-        searchbutton.addActionListener(e -> {
-
-        });
-
-        searchtext = new JTextField();
-        searchtext.setBounds(10,680,552,30);
-        searchtext.addActionListener(e -> {
-
-        });
-
         add(homebutton);
         add(tablepanel);
         add(singlevocabpanel);
@@ -150,8 +143,6 @@ public class VocabPanel extends JPanel {
         add(newvocabbutton);
         add(forwardbutton);
         add(deletebutton);
-        //add(searchbutton); TODO Falls noch Zeit übrig ist, kann man das noch programmieren
-        //add(searchtext);
     }
 
     public VocabularyShowPanel getSinglevocabpanel() {

@@ -89,10 +89,6 @@ public class VocabPackage {
     Wenn der Prüfungsmodus aktiviert ist, wird eine zufällige Vokabel aus der gesamten Liste ausgewählt.
     Andernfalls werden die Vokabeln nach ihrer Schwierigkeit ausgewählt, wobei die "undefinierten" Vokabeln Vorrang haben.*/
     public Vocabulary getRandomVocab(){
-        if(Main.pruefungsmodus){
-            int randomvocab = new Random().nextInt(vocablist.getLength());
-            return (Vocabulary) vocablist.getItem(randomvocab);
-        }
         if(!getUndefinedVocabList().isEmpty()){
             int randomvocab = new Random().nextInt(getUndefinedVocabList().getLength());
             return (Vocabulary) getUndefinedVocabList().getItem(randomvocab);
@@ -101,13 +97,13 @@ public class VocabPackage {
         int chance = new Random().nextInt(100)+1;
         if(chance <= richtig){ //Wenn richtig gewählt wurde
             int randomright = new Random().nextInt(getRightVocabList().getLength());
-            return (Vocabulary) getUndefinedVocabList().getItem(randomright);
+            return (Vocabulary) getRightVocabList().getItem(randomright);
         }else if(chance <= richtig+falsch){ //Wenn falsch gewählt wurde
             int randomwrong = new Random().nextInt(getWrongVocabList().getLength());
-            return (Vocabulary) getUndefinedVocabList().getItem(randomwrong);
+            return (Vocabulary) getWrongVocabList().getItem(randomwrong);
         }
         int randomhard = new Random().nextInt(getHardVocabList().getLength()); //Wenn hard gewählt wurde
-        return (Vocabulary) getUndefinedVocabList().getItem(randomhard);
+        return (Vocabulary) getHardVocabList().getItem(randomhard);
     }
 
     /*  setProbability() berechnet die Wahrscheinlichkeiten, mit denen Vokabeln ausgewählt werden
@@ -115,15 +111,15 @@ public class VocabPackage {
     private void setProbability(){
         richtig = 0;
         falsch = 0;
-        if(getRightVocabList().isEmpty()){
+        if(getRightVocabList().isEmpty() && !getHardVocabList().isEmpty()){
             falsch = 70;
         }else if(getRightVocabList().isEmpty() && getHardVocabList().isEmpty()){
             falsch = 100;
-        }else if(getWrongVocabList().isEmpty()){
+        }else if(getWrongVocabList().isEmpty() && !getHardVocabList().isEmpty()){
             richtig = 20;
         }else if(getWrongVocabList().isEmpty() && getHardVocabList().isEmpty()){
             richtig = 100;
-        }else if(getHardVocabList().isEmpty()){
+        }else if(getHardVocabList().isEmpty() && !getWrongVocabList().isEmpty() && !getRightVocabList().isEmpty()){
             richtig = 10;
             falsch = 90;
         }else if(getHardVocabList().isEmpty() && getWrongVocabList().isEmpty()){
@@ -141,7 +137,13 @@ public class VocabPackage {
             if(vocab.getKey().toLowerCase().equals(comparedvocab.getKey())){
                 DynArray values = comparedvocab.getValue();
                 for (int j = 0; j < vocab.getValue().getLength(); j++) {
-                    values.append(vocab.getValue().getItem(j));
+                    boolean check = true;
+                    for(int k = 0;k < values.getLength();k++){
+                        if (((String) values.getItem(k)).equalsIgnoreCase((String) vocab.getValue().getItem(j))){
+                            check = false;
+                        }
+                    }
+                    if(check) values.append(vocab.getValue().getItem(j));
                 }
                 return;
             }

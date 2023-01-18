@@ -74,7 +74,7 @@ public class CreateVocabularyFrame extends JFrame {
             DynArray values = new DynArray();
             String[] valuestr = newvalue.split(",");
             for (String value:valuestr){
-                if (value.charAt(0) == ' ') value.substring(1);
+                if (value.charAt(0) == ' ') value = value.substring(1);
                 values.append(value);
             }
             vocabulary = new Vocabulary(newname,values);
