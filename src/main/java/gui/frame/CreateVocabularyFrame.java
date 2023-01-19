@@ -24,7 +24,7 @@ public class CreateVocabularyFrame extends JFrame {
         setSize(300,220);
         setLocationRelativeTo(null);
 
-        error = new JLabel("<html>Bitte wähle eine Vokabel mit maximal 16<br>und mindestens 1 Buchstaben aus<br>mit Frage und Antwort!</html>",SwingConstants.CENTER);
+        error = new JLabel("<html>Bitte wähle eine Vokabel mit maximal 25<br>und mindestens 1 Buchstaben aus<br>mit Frage und Antwort!</html>",SwingConstants.CENTER);
         error.setBounds(10,5,280,60);
 
         JTextField newvockey = new JTextField();
@@ -34,7 +34,7 @@ public class CreateVocabularyFrame extends JFrame {
         newvocvalue.setBounds(50,110,200,30);
 
 
-        JButton confirm = new JButton("Karteikarte erstellen");
+        JButton confirm = new JButton("Karteikasten erstellen");
         confirm.setBounds(50,145,200,30);
         confirm.addActionListener(e -> createNewVocabulary(newvockey.getText(),newvocvalue.getText()));
         confirm.setFocusPainted(false);
@@ -59,7 +59,7 @@ public class CreateVocabularyFrame extends JFrame {
     }
 
     private void createNewVocabulary(String newname,String newvalue){
-        if((newname.toCharArray().length > 16 || newname.toCharArray().length == 0) || (newvalue.toCharArray().length > 16 || newvalue.toCharArray().length == 0)){
+        if((newname.toCharArray().length > 25 || newname.toCharArray().length == 0) || (newvalue.toCharArray().length > 25 || newvalue.toCharArray().length == 0)){
             error.setForeground(Color.red);
             new Timer().schedule(new TimerTask() {
                 @Override

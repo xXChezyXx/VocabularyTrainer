@@ -22,17 +22,17 @@ public class VocabPackage {
         this.vocablist = vocablist;
         this.name = name;
     }
-
+// Es gibt verschiedene Vokabellisten die über ihre Schwierigkeiten definiert werden. Jeder Vokabel wird zu Beginn der Wert "Undefined" zugeordnet. Nach dem ersten bearbeiten wird die Vokabel (wenn man sie falsch übersetzt) der Schwierigkeit falsch zugeordnet, wenn sie jedoch richtig beantwortet wird, gibt es die Möglichkeit sie entweder der Schwierigkeit "Richtig" oder "Hard" je nach dem persönlichem Empfinden zuzuordnen.
     // getVocablist() gibt das gesamte Vokabelliste zurück.
     public DynArray getVocablist() {
         return vocablist;
-    }
+    }            //durch return wird die aktuelle Vocablist abgerufen
 
     // getRightVocabList() gibt eine Liste mit allen Vokabeln zurück, die als "richtig" markiert sind.
-    public DynArray getRightVocabList() {
+    public DynArray getRightVocabList() {   //Die Lösungen der Vokabelliste werden durch die RightVocabList abgerufen
         DynArray dynArray = new DynArray();
         for (int i = 0;i < vocablist.getLength();i++){
-            if(((Vocabulary) vocablist.getItem(i)).getDifficulty() == Difficulty.RICHTIG){
+            if(((Vocabulary) vocablist.getItem(i)).getDifficulty() == Difficulty.RICHTIG){  //Eine komplette Liste, mit Vokabeln die den wert Difficulty.Richtig haben, wird zurückgegeben
                 dynArray.append(vocablist.getItem(i));
             }
         }
@@ -43,7 +43,7 @@ public class VocabPackage {
     public DynArray getWrongVocabList() {
         DynArray dynArray = new DynArray();
         for (int i = 0;i < vocablist.getLength();i++){
-            if(((Vocabulary) vocablist.getItem(i)).getDifficulty() == Difficulty.FALSCH){
+            if(((Vocabulary) vocablist.getItem(i)).getDifficulty() == Difficulty.FALSCH){   //Eine komplette Liste, mit Vokabeln die den Wert Difficulty.Falsch haben, wird zurückgegeben
                 dynArray.append(vocablist.getItem(i));
             }
         }
@@ -60,7 +60,7 @@ public class VocabPackage {
     public DynArray getHardVocabList() {
         DynArray dynArray = new DynArray();
         for (int i = 0;i < vocablist.getLength();i++){
-            if(((Vocabulary) vocablist.getItem(i)).getDifficulty() == Difficulty.HARD){
+            if(((Vocabulary) vocablist.getItem(i)).getDifficulty() == Difficulty.HARD){     //Ein komplette Liste, mit Vokabeln die den Wert Difficulty.Hard haben, wird zurückgegeben
                 dynArray.append(vocablist.getItem(i));
             }
         }
@@ -71,7 +71,7 @@ public class VocabPackage {
     public DynArray getUndefinedVocabList() {
         DynArray dynArray = new DynArray();
         for (int i = 0;i < vocablist.getLength();i++){
-            if(((Vocabulary) vocablist.getItem(i)).getDifficulty() == Difficulty.UNDEFINED){
+            if(((Vocabulary) vocablist.getItem(i)).getDifficulty() == Difficulty.UNDEFINED){    //Wenn eine neue Vokabel erstellt wird, kommt sie in eine Liste wo Vokabeln den Wert Difficulty.Undifined haben
                 dynArray.append(vocablist.getItem(i));
             }
         }
@@ -134,7 +134,7 @@ public class VocabPackage {
     public void addVocabulary(Vocabulary vocab){
         for (int i = 0; i < vocablist.getLength(); i++) {
             Vocabulary comparedvocab = (Vocabulary) vocablist.getItem(i);
-            if(vocab.getKey().toLowerCase().equals(comparedvocab.getKey())){
+            if(vocab.getKey().equalsIgnoreCase(comparedvocab.getKey())){
                 DynArray values = comparedvocab.getValue();
                 for (int j = 0; j < vocab.getValue().getLength(); j++) {
                     boolean check = true;

@@ -23,14 +23,14 @@ public class CreateVocabPackageFrame extends JFrame{
         setSize(300,180);
         setLocationRelativeTo(null);
 
-        error = new JLabel("<html>Bitte wähle ein Name mit maximal 16<br>und mindestens 1 Buchstaben aus!</html>",SwingConstants.CENTER);
+        error = new JLabel("<html>Bitte wähle ein Name mit maximal 25<br>und mindestens 1 Buchstaben aus!</html>",SwingConstants.CENTER);
         error.setBounds(10,5,280,60);
 
         JTextField newvocabpackage = new JTextField();
         newvocabpackage.setBounds(50,65,200,30);
         newvocabpackage.addActionListener(e -> createNewVocabList(e.getActionCommand()));
 
-        JButton confirm = new JButton("Karteikarte erstellen");
+        JButton confirm = new JButton("Karteikasten erstellen");
         confirm.setBounds(50,100,200,30);
         confirm.addActionListener(e -> createNewVocabList(newvocabpackage.getText()));
         confirm.setFocusPainted(false);
@@ -55,7 +55,7 @@ public class CreateVocabPackageFrame extends JFrame{
     }
 
     private void createNewVocabList(String newname){
-        if(newname.toCharArray().length > 16 || newname.toCharArray().length == 0){
+        if(newname.toCharArray().length > 25 || newname.toCharArray().length == 0){
             error.setForeground(Color.red);
             new Timer().schedule(new TimerTask() {
                 @Override

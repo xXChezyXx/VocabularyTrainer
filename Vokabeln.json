@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Test",
+    "vocablist": [
+      {
+        "key": "test",
+        "difficulty": "UNDEFINED",
+        "value": [
+          "test"
+        ]
+      }
+    ]
+  }
+]

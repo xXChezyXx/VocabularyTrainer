@@ -44,7 +44,7 @@ public class MenuPanel extends JPanel {
         page = new JLabel("Seite "+currentpage+" von "+maxpage,SwingConstants.CENTER);
         page.setBounds(302,610,312,30);
 
-        //Panel für die Karteikarten
+        //Panel für die Karteikasten
         vocablistpanel = new JPanel();
         vocablistpanel.setBounds(10,10,888,590);
         vocablistpanel.setBackground(Color.black);
@@ -84,7 +84,7 @@ public class MenuPanel extends JPanel {
         createkarteikasten.setBounds(905,100,160,60);
         createkarteikasten.setFocusPainted(false);
         createkarteikasten.addActionListener(e -> {
-            CreateVocabPackageFrame createVocabPackage = new CreateVocabPackageFrame("Neue Karteikarte erstellen");
+            CreateVocabPackageFrame createVocabPackage = new CreateVocabPackageFrame("Neuer Karteikasten erstellen");
             createVocabPackage.setVisible(true);
             Main.mainframe.setEnabled(false);
         });
