@@ -5,9 +5,14 @@ import main.java.utils.Difficulty;
 import main.java.vocab.VocabPackage;
 import main.java.vocab.Vocabulary;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.plaf.BorderUIResource;
 import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.net.URL;
 
 public class LearnPanel extends JPanel {
 
