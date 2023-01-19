@@ -28,11 +28,13 @@ public class CreateVocabularyFrame extends JFrame {
         error.setBounds(10,5,280,60);
 
         JTextField newvockey = new JTextField();
-        newvockey.setBounds(50,75,200,30);
-
         JTextField newvocvalue = new JTextField();
-        newvocvalue.setBounds(50,110,200,30);
 
+        newvockey.setBounds(50,75,200,30);
+        newvockey.addActionListener(e -> createNewVocabulary(newvockey.getText(),newvocvalue.getText()));
+
+        newvocvalue.setBounds(50,110,200,30);
+        newvocvalue.addActionListener(e -> createNewVocabulary(newvockey.getText(),newvocvalue.getText()));
 
         JButton confirm = new JButton("Karteikasten erstellen");
         confirm.setBounds(50,145,200,30);

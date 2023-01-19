@@ -60,10 +60,11 @@ public class LearnPanel extends JPanel {
 
         solution = new JLabel("",SwingConstants.CENTER);
         solution.setName("SOLUTION");
-        solution.setBounds(390,190,300,30);
+        solution.setBounds(290,190,500,30);
 
         value = new JTextField();
         value.setBounds(620,95,300,30);
+        value.addActionListener(e -> addActionListener(vocabpackage));
 
         yesbutton = new JButton("Ja");
         yesbutton.setName("YES");
@@ -97,45 +98,7 @@ public class LearnPanel extends JPanel {
 
         confirmbutton = new JButton("Bestätigen");
         confirmbutton.setBounds(390, 150,300,30);
-        confirmbutton.addActionListener(e -> {
-            if (confirmbutton.getText().equalsIgnoreCase("Bestätigen")) {
-                StringBuilder stringBuilder = new StringBuilder();
-                for (int i = 0; i < randomvocab.getValue().getLength(); i++) {
-                    stringBuilder.append(", ");
-                    stringBuilder.append(randomvocab.getValue().getItem(i));
-                    if (value.getText().equalsIgnoreCase((String) randomvocab.getValue().getItem(i))) {
-                        updateSolution(solution, "Die Antwort ist richtig! War es schwer?");
-                        confirmbutton.setVisible(false);
-                        yesbutton.setVisible(true);
-                        nobutton.setVisible(true);
-                        questioncount++;
-                        streakcount++;
-                        rightcount++;
-                        if (streakcount > maxstreakcount){
-                            maxstreakcount = streakcount;
-                        }
-                        updateButtons(yesbutton,nobutton);
-                        Main.mainframe.reload();
-                        return;
-                    }
-                }
-                updateSolution(solution, "Falsch, die richtige Antwort wäre: \"" + stringBuilder.substring(2) + "\"!");
-                if(questioncount >= 15){
-                    confirmbutton.setText("Ergebnisse ansehen");
-                }else {
-                    confirmbutton.setText("Nächste Vokabel");
-                }
-                Main.mainframe.reload();
-                return;
-            }
-            randomvocab.setDifficulty(Difficulty.FALSCH);
-            randomvocab = vocabpackage.getRandomVocab();
-            questioncount++;
-            streakcount = 0;
-            wrongcount++;
-            updatePanel();
-            Main.mainframe.reload();
-        });
+        confirmbutton.addActionListener(e -> addActionListener(vocabpackage));
 
         homebutton = new JButton("Zurück zum Menu");
         homebutton.setBounds(905,10,165,30);
@@ -158,6 +121,46 @@ public class LearnPanel extends JPanel {
 
     public String getTitle() {
         return title;
+    }
+
+    public void addActionListener(VocabPackage vocabpackage){
+        if (confirmbutton.getText().equalsIgnoreCase("Bestätigen")) {
+            StringBuilder stringBuilder = new StringBuilder();
+            for (int i = 0; i < randomvocab.getValue().getLength(); i++) {
+                stringBuilder.append(", ");
+                stringBuilder.append(randomvocab.getValue().getItem(i));
+                if (value.getText().equalsIgnoreCase((String) randomvocab.getValue().getItem(i))) {
+                    updateSolution(solution, "Die Antwort ist richtig! War es schwer?");
+                    confirmbutton.setVisible(false);
+                    yesbutton.setVisible(true);
+                    nobutton.setVisible(true);
+                    questioncount++;
+                    streakcount++;
+                    rightcount++;
+                    if (streakcount > maxstreakcount){
+                        maxstreakcount = streakcount;
+                    }
+                    updateButtons(yesbutton,nobutton);
+                    Main.mainframe.reload();
+                    return;
+                }
+            }
+            updateSolution(solution, "Falsch, die richtige Antwort wäre: \"" + stringBuilder.substring(2) + "\"!");
+            if(questioncount >= 15){
+                confirmbutton.setText("Ergebnisse ansehen");
+            }else {
+                confirmbutton.setText("Nächste Vokabel");
+            }
+            Main.mainframe.reload();
+            return;
+        }
+        randomvocab.setDifficulty(Difficulty.FALSCH);
+        randomvocab = vocabpackage.getRandomVocab();
+        questioncount++;
+        streakcount = 0;
+        wrongcount++;
+        updatePanel();
+        Main.mainframe.reload();
     }
 
     public void updateSolution(JLabel solution, String text){

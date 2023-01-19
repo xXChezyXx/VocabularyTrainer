@@ -6,7 +6,37 @@
         "key": "test",
         "difficulty": "UNDEFINED",
         "value": [
-          "test"
+          "test",
+          "qwertzuiopüasyxcvbnmasd"
+        ]
+      },
+      {
+        "key": "as",
+        "difficulty": "FALSCH",
+        "value": [
+          "1234567890123456789012345"
+        ]
+      },
+      {
+        "key": "damn",
+        "difficulty": "FALSCH",
+        "value": [
+          "2222222222222222222222222"
+        ]
+      },
+      {
+        "key": "pls",
+        "difficulty": "UNDEFINED",
+        "value": [
+          "2342342342342342342342342",
+          "oge"
+        ]
+      },
+      {
+        "key": "gar nicht",
+        "difficulty": "FALSCH",
+        "value": [
+          "bemerkt"
         ]
       }
     ]
