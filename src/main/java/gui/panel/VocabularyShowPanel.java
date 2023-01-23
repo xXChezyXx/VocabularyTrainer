@@ -9,9 +9,22 @@ public class VocabularyShowPanel extends JPanel {
 
     JPanel vocabkeypanel;
     JPanel vocabvaluepanel;
+
+    /**
+     * Frage der Vokabel.
+     */
     JLabel vocabkey;
+
+    /**
+     * Antwort der Vokabel.
+     */
     JLabel vocabvalue;
 
+    /**
+     * Eine bestimmte Vokabel wird in dem Vokabelmenü angezeigt.
+     * Dabei wird die Frage und die Antwort angezeigt. Außerdem
+     * gibt es die Option diese Vokabel zu löschen.
+     */
     public VocabularyShowPanel(Vocabulary vocabulary){
         setBounds(10,10,700,620);
         setBackground(Color.black);
@@ -41,6 +54,7 @@ public class VocabularyShowPanel extends JPanel {
         add(vocabkeypanel);
         add(vocabvaluepanel);
     }
+
 
     public JLabel getVocabkey() {
         return vocabkey;

@@ -5,12 +5,26 @@ import main.java.utils.DynArray;
 
 public class Vocabulary {
 
-    private String key; //Frage
-    private DynArray value; //Antwort
+    /**
+     * Frage der Vokabel.
+     */
+    private String key;
+
+    /**
+     * Antwort der Vokabel
+     */
+    private DynArray value;
+
+    /**
+     * Schwierigkeitsgrad der Vokabel
+     */
     private Difficulty difficulty;
 
 
 
+    /**
+     * Eine Vokabel besteht aus einer Frage, einer Antwort und eines Schwierigkeitsgrades.
+     */
     public Vocabulary(String key, String value){
         this.key = key;
         DynArray dynArray = new DynArray();
@@ -31,38 +45,26 @@ public class Vocabulary {
         this.difficulty = difficulty;
     }
 
-
-    //getDifficulty() gibt die Schwierigkeit einer Vokabel zurück
     public Difficulty getDifficulty() {
         return difficulty;
     }
 
-
-    //getKey() gibt die Frage einer Vokabel zurück
     public String getKey() {
         return key;
     }
 
-
-    //getKey(), gibt die Antwort einer Vokabel zurück
     public DynArray getValue() {
         return value;
     }
 
-
-    //setKey(String key) erlaubt die Frage einer Vokabel zu setzen
     public void setKey(String key) {
         this.key = key;
     }
 
-
-    //setValue(DynArray value) erlaubt die Antwort einer Vokabel zu setzen
     public void setValue(DynArray value) {
         this.value = value;
     }
 
-
-    //setDifficulty(Difficulty difficulty) setzt den difficulty der Vokabel
     public void setDifficulty(Difficulty difficulty) {
         this.difficulty = difficulty;
     }

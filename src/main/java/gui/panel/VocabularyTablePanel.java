@@ -9,6 +9,10 @@ import javax.swing.table.DefaultTableModel;
 
 public class VocabularyTablePanel {
 
+    /**
+     * Eine Tabelle der ganzen Vokabeln zu einem bestimmten Karteikasten
+     * werden in der Tabelle grafisch dargestellt.
+     */
     public static JScrollPane VocabularyTable(VocabPackage vocabPackage,int row){
 
         String[][] vocabularys = new String[vocabPackage.getVocablist().getLength()][2];

@@ -5,14 +5,13 @@ import main.java.utils.Difficulty;
 import main.java.vocab.VocabPackage;
 import main.java.vocab.Vocabulary;
 
-import javax.imageio.ImageIO;
-import javax.swing.*;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 import javax.swing.plaf.BorderUIResource;
-import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-import java.net.URL;
+import java.awt.Dimension;
 
 public class LearnPanel extends JPanel {
 
@@ -34,6 +33,11 @@ public class LearnPanel extends JPanel {
     private JButton yesbutton;
     private JButton nobutton;
 
+    /**
+     * 15 Fragen müssen beantwortet werden. Falls die Antwort richtig ist, wird abgefragt, ob die Frage schwer war.
+     * Ist dies der Fall, wird die Vokabel auf mittel gesetzt. Auch gibt es eine Streak, die verloren geht, wenn eine
+     * Frage falsch beantwortet wird. Nach den 15 Fragen werden die Ergebnisse angezeigt.
+     */
     public LearnPanel(VocabPackage vocabpackage){
 
         maxstreakcount = 0;
@@ -128,6 +132,10 @@ public class LearnPanel extends JPanel {
         return title;
     }
 
+    /**
+     * Die Operation reagiert, wenn die Antwort betätigt wurde.
+     * Dabei wird geguckt, ob die Antwort richtig ist und im Ergebnis verwertet.
+     */
     public void addActionListener(VocabPackage vocabpackage){
         if (confirmbutton.getText().equalsIgnoreCase("Bestätigen")) {
             StringBuilder stringBuilder = new StringBuilder();
@@ -168,6 +176,9 @@ public class LearnPanel extends JPanel {
         Main.mainframe.reload();
     }
 
+    /**
+     * Es wird angezeigt, ob die Antwort richtig oder falsch ist.
+     */
     public void updateSolution(JLabel solution, String text){
         for (int i = 0;i < getComponents().length;i++){
             try {
@@ -181,6 +192,9 @@ public class LearnPanel extends JPanel {
         add(solution);
     }
 
+    /**
+     * Eine neue Frage wird angezeigt.
+     */
     public void updatePanel(){
         if(questioncount > 15){
             Main.mainframe.setResultPanel(new ResultPanel(maxstreakcount,rightcount,wrongcount));

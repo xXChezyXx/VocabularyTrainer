@@ -6,9 +6,19 @@ import main.java.utils.DynArray;
 
 public class Main {
 
+    /**
+     * Prüfungsmodus kann angeschaltet und ausgeschaltet werden.
+     */
     public static boolean pruefungsmodus = false;
+
+    /**
+     * Liste der Karteikasten, die geladen werden.
+     */
     public static DynArray vocabpackagelist = new DynArray();
 
+    /**
+     * Damit wir ein Fenster MainFrame erstellt, was das Hauptmenü des Programms sein soll.
+     */
     public static MainFrame mainframe;
 
     public static void main(String[] args) {

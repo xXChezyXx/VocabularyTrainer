@@ -19,6 +19,10 @@ public class VocabPanel extends JPanel {
     private JButton forwardbutton;
     private final JButton deletebutton;
 
+    /**
+     * Das Vokabelmenü besitzt eine Tabelle mit allen Vokabeln, einen Zurückknopf ins Hauptmenü, einen Knopf,
+     * um neue Vokabeln zu erstellen und einen Knopf zum Löschen einer Vokabel.
+     */
     public VocabPanel(VocabPackage vocabpackage){
         this.vocabpackage = vocabpackage;
 
@@ -153,6 +157,9 @@ public class VocabPanel extends JPanel {
         return vocabpackage;
     }
 
+    /**
+     * Tabelle aktualisiert sich damit.
+     */
     public void setTablePanel(JScrollPane tablepanel) {
         for (int i = 0;i < getComponents().length;i++){
             try {

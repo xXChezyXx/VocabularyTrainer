@@ -8,14 +8,40 @@ import main.java.gui.panel.VocabPanel;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Hauptfenster, wo die ganzen Menüs angezeigt werden.
+ */
 public class MainFrame extends JFrame {
 
+    /**
+     * Hauptmenü, wenn das Programm gestartet wird.
+     */
     private MenuPanel menupanel;
+
+    /**
+     * In dem Vokabelmenü können Vokabeln erstellt oder gelöscht werden
+     * für einen bestimmten Karteikasten.
+     */
     private VocabPanel vocabpanel;
+
+    /**
+     * Ein Menü zum Lernen, dabei werden 15 Vokabeln abgefragt.
+     */
     private LearnPanel learnpanel;
+
+    /**
+     * Das Resultat, nachdem die 15 Vokabeln abgefragt wurden.
+     */
     private ResultPanel resultPanel;
+
+    /**
+     * Die Variable soll darstellen, in welchem Zustand das Hauptfenster sich befindet.
+     */
     private int panel;
 
+    /**
+     * Das Hauptfenster besitzt eine 1080 x 720 Auflösung, die nicht skalierbar ist.
+     */
     public MainFrame(){
         this.panel = 0;
         //GUI
@@ -50,6 +76,11 @@ public class MainFrame extends JFrame {
         this.learnpanel = learnpanel;
     }
 
+    /**
+     * Es gibt verschiedene Modis, die das Hauptfenster annehmen kann:
+     * Modus 0: Das Hauptmenü, Modus 1: Das Vokabelmenü, Modul2: Der Prüfungsmodus,
+     * Modul 3: Ergebnis der Prüfungsmodus.
+     */
     public void reload(){
         getContentPane().removeAll();
         switch (panel){

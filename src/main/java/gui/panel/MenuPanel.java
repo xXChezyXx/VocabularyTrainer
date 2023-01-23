@@ -21,6 +21,10 @@ public class MenuPanel extends JPanel {
     private JButton next;
     private JTextField searchtext;
 
+    /**
+     * Das Hauptmenü besteht aus einer Liste von Karteikasten. Dabei können neue Karteikasten erstellt werden und
+     * gefiltert gesucht werden. Auch können sie gelöscht oder geöffnet werden.
+     */
     public MenuPanel(int currenpage){
         this.currentpage = currenpage;
         vocabpackage = Main.vocabpackagelist;
@@ -144,6 +148,9 @@ public class MenuPanel extends JPanel {
         add(vocablistpanel);
     }
 
+    /**
+     * Abhängig von der Seite werden die zugehörigen Karteikasten geladen.
+     */
     public void loadVocabPackages(){
         maxpage = Math.max((int) Math.ceil(vocabpackage.getLength()/15d),1);
         previous.setEnabled(true);
@@ -180,6 +187,9 @@ public class MenuPanel extends JPanel {
         }
     }
 
+    /**
+     * Die Vokabeln werden nach einem Text gefiltert.
+     */
     public void filterVocabulary(){
         String[] strings = searchtext.getText().split(" ");
         DynArray sortedvocabpackage = new DynArray();

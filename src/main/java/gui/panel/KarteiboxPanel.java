@@ -6,11 +6,20 @@ import main.java.vocab.VocabPackage;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Ein Kartikastenmenü, das zum Hauptmenü gehört.
+ */
 public class KarteiboxPanel extends JPanel{
 
     //848 / 3 = 276 Breite
     //530 / 5 = 106 Höhe
     private final JButton open;
+
+    /**
+     * Das Menü besitzt 2 Knöpfe. Einer davon ist zum Löschen da.
+     * Der Andere kann zum Öffnen oder zum Lernen benutzt werden.
+     * Das kommt auf den Wert des Prüfungsmodus an.
+     */
     public KarteiboxPanel(VocabPackage vocabPackage){
         setBackground(Color.white);
         setLayout(null);

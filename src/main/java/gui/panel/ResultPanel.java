@@ -15,6 +15,10 @@ public class ResultPanel extends JPanel {
     private JPanel wrongbar;
     private JPanel beststreakbar;
 
+    /**
+     * Beim Ergebnis werden die Anzahl der richtig erratende und falsch erratende Vokabeln in Form eines
+     * Seitendiagramms dargstellt. Auch wird der maximale Streak angezeigt.
+     */
     public ResultPanel(int beststreak,int right, int wrong){
 
         setPreferredSize(new Dimension(1080,720));

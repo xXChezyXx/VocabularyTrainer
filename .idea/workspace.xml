@@ -10,15 +10,94 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="311ce7da-96e3-483e-b89f-2745f372a020" name="Changes" comment="Vokabeln">
-      <change afterPath="$PROJECT_DIR$/src/main/java/gui/panel/ImagePanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/right1.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/right2.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/right3.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/wrong1.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/wrong2.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/wrong3.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc/allclasses-frame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc/allclasses-noframe.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc/constant-values.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc/deprecated-list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc/help-doc.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc/index-files/index-1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc/index-files/index-10.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc/index-files/index-11.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc/index-files/index-12.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc/index-files/index-13.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc/index-files/index-14.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc/index-files/index-15.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc/index-files/index-16.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc/index-files/index-17.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc/index-files/index-2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc/index-files/index-3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc/index-files/index-4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc/index-files/index-5.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc/index-files/index-6.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc/index-files/index-7.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc/index-files/index-8.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc/index-files/index-9.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc/main/java/data/FileConfiguration.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc/main/java/data/package-frame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc/main/java/data/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc/main/java/data/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc/main/java/gui/frame/CreateVocabPackageFrame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc/main/java/gui/frame/CreateVocabularyFrame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc/main/java/gui/frame/MainFrame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc/main/java/gui/frame/package-frame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc/main/java/gui/frame/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc/main/java/gui/frame/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc/main/java/gui/panel/KarteiboxPanel.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc/main/java/gui/panel/LearnPanel.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc/main/java/gui/panel/MenuPanel.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc/main/java/gui/panel/ResultPanel.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc/main/java/gui/panel/VocabPanel.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc/main/java/gui/panel/VocabularyShowPanel.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc/main/java/gui/panel/VocabularyTablePanel.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc/main/java/gui/panel/package-frame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc/main/java/gui/panel/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc/main/java/gui/panel/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc/main/java/main/Main.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc/main/java/main/package-frame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc/main/java/main/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc/main/java/main/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc/main/java/utils/Difficulty.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc/main/java/utils/DynArray.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc/main/java/utils/Element.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc/main/java/utils/package-frame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc/main/java/utils/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc/main/java/utils/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc/main/java/vocab/VocabPackage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc/main/java/vocab/Vocabulary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc/main/java/vocab/package-frame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc/main/java/vocab/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc/main/java/vocab/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc/overview-frame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc/overview-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc/overview-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc/package-list" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc/script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc/serialized-form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc/stylesheet.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc/test/java/Test.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc/test/java/package-frame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc/test/java/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc/test/java/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_01_2023_10_39_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_01_2023_10_39__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/FileConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/FileConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/frame/CreateVocabPackageFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/frame/CreateVocabPackageFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/frame/CreateVocabularyFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/frame/CreateVocabularyFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/frame/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/frame/MainFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/panel/KarteiboxPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/panel/KarteiboxPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/gui/panel/LearnPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/panel/LearnPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/panel/MenuPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/panel/MenuPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/panel/ResultPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/panel/ResultPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/panel/VocabPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/panel/VocabPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/panel/VocabularyShowPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/panel/VocabularyShowPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/panel/VocabularyTablePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/panel/VocabularyTablePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/Difficulty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/Difficulty.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vocab/VocabPackage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vocab/VocabPackage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vocab/Vocabulary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vocab/Vocabulary.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +120,7 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="SWAP_SIDES_IN_COMPARE_BRANCHES" value="true" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -78,25 +158,26 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Leon/Documents/Development/Java/AsiaPerle&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "1.8",
+    "last_opened_file_path": "C:/Users/Leon/Documents/Development/Java/AsiaPerle",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Leon\Documents\Development\Java\VocabularyTrainer\src\main\resources" />
@@ -412,7 +493,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674139726218</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Vokabeln">
+      <created>1674143869982</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1674143869982</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -7,87 +7,105 @@ import main.java.utils.DynArray;
 import java.util.Random;
 
 
-/*Dieser Code definiert eine Klasse mit dem Namen "VocabPackage",
-die einen Namen, eine Liste von Vokabeln (die in einem DynArray gespeichert sind)
-und verschiedene Zähler für richtige und falsche Antworten enthält.*/
-
+/**
+ * Karteikasten, die eine Liste von Vokabeln enthält.
+ */
 public class VocabPackage {
 
+    /**
+     * Name der Karteikasten.
+     */
     private String name;
+
+    /**
+     * Inhalt vom Karteikasten.
+     */
     private DynArray vocablist;
+
+    /**
+     * Wahrscheinlichkeit für Vokabeln, die schon richtig erraten wurden.
+     */
     private int richtig;
+
+    /**
+     * Wahrscheinlichkeit für Vokabeln, die schon falsch erraten wurden.
+     */
     private int falsch;
 
     public VocabPackage(DynArray vocablist, String name){
         this.vocablist = vocablist;
         this.name = name;
     }
-// Es gibt verschiedene Vokabellisten die über ihre Schwierigkeiten definiert werden. Jeder Vokabel wird zu Beginn der Wert "Undefined" zugeordnet. Nach dem ersten bearbeiten wird die Vokabel (wenn man sie falsch übersetzt) der Schwierigkeit falsch zugeordnet, wenn sie jedoch richtig beantwortet wird, gibt es die Möglichkeit sie entweder der Schwierigkeit "Richtig" oder "Hard" je nach dem persönlichem Empfinden zuzuordnen.
-    // getVocablist() gibt das gesamte Vokabelliste zurück.
+
     public DynArray getVocablist() {
         return vocablist;
-    }            //durch return wird die aktuelle Vocablist abgerufen
+    }
 
-    // getRightVocabList() gibt eine Liste mit allen Vokabeln zurück, die als "richtig" markiert sind.
-    public DynArray getRightVocabList() {   //Die Lösungen der Vokabelliste werden durch die RightVocabList abgerufen
+    /**
+     * Gibt eine Liste mit allen Vokabeln zurück, die als "richtig" markiert sind.
+     */
+    public DynArray getRightVocabList() {
         DynArray dynArray = new DynArray();
         for (int i = 0;i < vocablist.getLength();i++){
-            if(((Vocabulary) vocablist.getItem(i)).getDifficulty() == Difficulty.RICHTIG){  //Eine komplette Liste, mit Vokabeln die den wert Difficulty.Richtig haben, wird zurückgegeben
+            if(((Vocabulary) vocablist.getItem(i)).getDifficulty() == Difficulty.RICHTIG){
                 dynArray.append(vocablist.getItem(i));
             }
         }
         return dynArray;
     }
 
-    // getWrongVocabList() gibt eine Liste mit allen Vokabeln zurück, die als "falsch" markiert sind.
+    /**
+     * Gibt eine Liste mit allen Vokabeln zurück, die als "falsch" markiert sind.
+     */
     public DynArray getWrongVocabList() {
         DynArray dynArray = new DynArray();
         for (int i = 0;i < vocablist.getLength();i++){
-            if(((Vocabulary) vocablist.getItem(i)).getDifficulty() == Difficulty.FALSCH){   //Eine komplette Liste, mit Vokabeln die den Wert Difficulty.Falsch haben, wird zurückgegeben
+            if(((Vocabulary) vocablist.getItem(i)).getDifficulty() == Difficulty.FALSCH){
                 dynArray.append(vocablist.getItem(i));
             }
         }
         return dynArray;
     }
 
-
-    // getName() gibt den Namen des Vokabellisten zurück.
     public String getName() {
         return name;
     }
 
-    //getHardVocabList() gibt eine Liste mit allen Vokabeln zurück, die als "schwer" markiert sind.
+    /**
+     * Gibt eine Liste mit allen Vokabeln zurück, die als "schwer" markiert sind.
+     */
     public DynArray getHardVocabList() {
         DynArray dynArray = new DynArray();
         for (int i = 0;i < vocablist.getLength();i++){
-            if(((Vocabulary) vocablist.getItem(i)).getDifficulty() == Difficulty.HARD){     //Ein komplette Liste, mit Vokabeln die den Wert Difficulty.Hard haben, wird zurückgegeben
+            if(((Vocabulary) vocablist.getItem(i)).getDifficulty() == Difficulty.HARD){
                 dynArray.append(vocablist.getItem(i));
             }
         }
         return dynArray;
     }
 
-    //getUndefinedVocabList() gibt eine Liste mit allen Vokabeln zurück, die als "undefiniert" markiert sind.
+    /**
+     * Gibt eine Liste mit allen Vokabeln zurück, die als "undefined" markiert sind.
+     */
     public DynArray getUndefinedVocabList() {
         DynArray dynArray = new DynArray();
         for (int i = 0;i < vocablist.getLength();i++){
-            if(((Vocabulary) vocablist.getItem(i)).getDifficulty() == Difficulty.UNDEFINED){    //Wenn eine neue Vokabel erstellt wird, kommt sie in eine Liste wo Vokabeln den Wert Difficulty.Undifined haben
+            if(((Vocabulary) vocablist.getItem(i)).getDifficulty() == Difficulty.UNDEFINED){
                 dynArray.append(vocablist.getItem(i));
             }
         }
         return dynArray;
     }
 
-    /*
-    Aufteilung für die Vokabeln:        Wenn RICHTIG leer ist:          Wenn FALSCH leer ist:           Wenn HARD leer ist:
-    RICHTIG=5%                          FALSCH=70%                      RICHTIG=20%                     RICHTIG=10%
-    FALSCH=70%                          HARD=30%                        HARD=80%                        FALSCH=90%
-    HARD=25%
-                                           ------ Dabei hat Undefined Vorrang ------
-    */
-    /* getRandomVocab() gibt eine zufällige Vokabel aus der Liste zurück.
-    Wenn der Prüfungsmodus aktiviert ist, wird eine zufällige Vokabel aus der gesamten Liste ausgewählt.
-    Andernfalls werden die Vokabeln nach ihrer Schwierigkeit ausgewählt, wobei die "undefinierten" Vokabeln Vorrang haben.*/
+    /**
+     * Gibt eine zufällige Vokabel zurück, dabei wird die Operation für den Prüfungsmodus verwendet.
+     * Die Wahrscheinlichkeiten ergeben sich folgendermaßen:
+     * Aufteilung für die Vokabeln: RICHTIG=5%  FALSCH=70%  HARD=25%
+     * Wenn RICHTIG leer ist:                   FALSCH=70%  HARD=30%
+     * Wenn FALSCH leer ist:        RICHTIG=20%             HARD=80%
+     * Wenn HARD leer ist:          RICHTIG=10% FALSCH=90%.
+     * Dabei hat Undefined Vorrang
+     */
     public Vocabulary getRandomVocab(){
         if(!getUndefinedVocabList().isEmpty()){
             int randomvocab = new Random().nextInt(getUndefinedVocabList().getLength());
@@ -106,8 +124,9 @@ public class VocabPackage {
         return (Vocabulary) getHardVocabList().getItem(randomhard);
     }
 
-    /*  setProbability() berechnet die Wahrscheinlichkeiten, mit denen Vokabeln ausgewählt werden
-     , basierend auf den Prozentsätzen, die im Kommentar beschrieben sind.*/
+    /**
+     * Verteilt die Wahrscheinlichkeit basierend auf die Schwierigkeitsgrade der Vokabeln.
+     */
     private void setProbability(){
         richtig = 0;
         falsch = 0;
@@ -130,7 +149,9 @@ public class VocabPackage {
     }
 
 
-    //addVocabulary(Vocabulary vocab) fügt eine neue Vokabel zur Liste hinzu.
+    /**
+     * Fügt eine Vokabel im Karteikasten hinzu. Bei Duplikationen werden die bestimmte Vokabeln überschrieben.
+     */
     public void addVocabulary(Vocabulary vocab){
         for (int i = 0; i < vocablist.getLength(); i++) {
             Vocabulary comparedvocab = (Vocabulary) vocablist.getItem(i);
@@ -159,7 +180,9 @@ public class VocabPackage {
     }
 
 
-    //addValuesTogether() erhöht die Anzahl der richtigen und falschen Antworten um die Werte, die in einer gegebenen Vokabel gespeichert sind.
+    /**
+     * Gibt eine Liste der Antworten zurück für das Überschreiben der Vokabel.
+     */
     private DynArray addValuesTogether(DynArray value1, String value2){
         for (int i = 0;i < value1.getLength();i++){
             if(((String) value1.getItem(i)).equalsIgnoreCase(value2)){
@@ -170,14 +193,10 @@ public class VocabPackage {
         return value1;
     }
 
-
-    // setName(String name) setzt den Namen der Vokabellisten auf den angegebenen Wert.
     public void setName(String name) {
         this.name = name;
     }
 
-
-    //setVocablist(DynArray vocablist) setzt die Vokabelliste auf die angegebene Liste.
     public void setVocablist(DynArray vocablist) {
         this.vocablist = vocablist;
     }

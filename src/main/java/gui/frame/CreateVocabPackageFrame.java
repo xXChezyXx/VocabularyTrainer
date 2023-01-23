@@ -11,8 +11,14 @@ import java.awt.event.WindowEvent;
 import java.util.Timer;
 import java.util.TimerTask;
 
+/**
+ * Fenster, wo ein neuer Karteikasten erstellt wird.
+ */
 public class CreateVocabPackageFrame extends JFrame{
 
+    /**
+     * Fehlermeldung, falls der Name ungültig ist.
+     */
     private final JLabel error;
 
     public CreateVocabPackageFrame(String title){
@@ -54,6 +60,11 @@ public class CreateVocabPackageFrame extends JFrame{
         pane.add(error);
     }
 
+    /**
+     * Falls der Knopf betätigt wurde, wird überprüft, ob der name passend ist.
+     * Passend definiert ist in diesem Fall: Nicht länger als 25 Zeichen und mindestens
+     * ein Zeichen. Falls die Bedingung übereinstimmt, wird ein neuer Karteikasten erstellt.
+     */
     private void createNewVocabList(String newname){
         if(newname.toCharArray().length > 25 || newname.toCharArray().length == 0){
             error.setForeground(Color.red);

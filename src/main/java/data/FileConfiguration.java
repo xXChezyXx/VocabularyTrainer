@@ -13,10 +13,14 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.util.Scanner;
 
-
-//Die Klasse FileConfiguration dient dazu, Vokabellisten in eine Datei zu speichern und aus einer Datei zu laden.
+/**
+ * Die Klasse FileConfiguration dient dazu, Vokabellisten in eine Datei zu speichern und aus einer Datei zu laden.
+ */
 public class FileConfiguration {
 
+    /**
+     * Datei, die alle Karteikasten abspeichert und laden lässt.
+     */
     private final File file;
 
     public FileConfiguration(String file) {
@@ -31,10 +35,10 @@ public class FileConfiguration {
     }
 
 
-    /*Die Methode saveVocabPackage() speichert die Vokabellisten in eine Datei.
-    Sie erstellt dazu einen OutputStreamWriter und verwendet die Bibliothek GSON,
-    um die Vokabellisten in ein JSON-Format zu konvertieren.
-    Dann wird der so erstellte JSON-Code in die Datei geschrieben.*/
+    /**
+     * Speichert die Karteikasten in einer Datei in JSON Format.
+     * Dabei wird GSON als Erweiterung benutzt.
+     */
     public void saveVocabPackage() {
         OutputStreamWriter fileWriter;
         try {
@@ -79,8 +83,9 @@ public class FileConfiguration {
     }
 
 
-    /*Die Methode loadVocablist() lädt Vokabellisten aus einer Datei. Sie erstellt dazu einen InputStream und verwendet die Bibliothek GSON,
-     um den Inhalt der Datei in ein JSON-Format zu konvertieren. Anschließend wird der JSON-Code in ein DynArray konvertiert und zurückgegeben.*/
+    /**
+     * Wandelt die in JSON gespeicherte Datei in einen DynArray, der den Datentyp VocabPackage, um.
+     */
     public DynArray loadVocablist(){
         ByteArrayOutputStream result = new ByteArrayOutputStream();
         String content;

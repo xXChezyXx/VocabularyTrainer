@@ -12,8 +12,14 @@ import java.awt.event.WindowEvent;
 import java.util.Timer;
 import java.util.TimerTask;
 
+/**
+ * Fenster, wo eine neue Vokabel erstellt wird.
+ */
 public class CreateVocabularyFrame extends JFrame {
 
+    /**
+     * Fehlermeldung, falls der Name ungültig ist.
+     */
     private final JLabel error;
 
     public CreateVocabularyFrame(String title){
@@ -60,6 +66,12 @@ public class CreateVocabularyFrame extends JFrame {
         pane.add(error);
     }
 
+    /**
+     * Falls der Knopf betätigt wurde, wird überprüft, ob der name passend ist.
+     * Passend definiert ist in diesem Fall: Nicht länger als 25 Zeichen und mindestens
+     * ein Zeichen. Falls die Bedingung übereinstimmt, wird eine neue Vokabel erstellt und
+     * das Hauptmenü aktualisiert sich dabei.
+     */
     private void createNewVocabulary(String newname,String newvalue){
         if((newname.toCharArray().length > 25 || newname.toCharArray().length == 0) || (newvalue.toCharArray().length > 25 || newvalue.toCharArray().length == 0)){
             error.setForeground(Color.red);
